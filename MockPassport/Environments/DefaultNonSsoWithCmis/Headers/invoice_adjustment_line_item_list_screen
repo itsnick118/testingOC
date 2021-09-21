@@ -1,0 +1,10 @@
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-UA-Compatible: IE=10
+X-FRAME-OPTIONS: SAMEORIGIN
+Pragma: no-cache
+metadata: {"parentFieldName":"adjustmentLineItems","cssClasses":"mode-edit screen list","screen-name":"Adjustment Line Item List Screen - OC Spend Management","searchInput.pageInfo.currentPageNumber":"1","searchInput.pageInfo.totalRecords":"0","parentEntityId":"179","parentInstanceId":"44","searchInput.pageInfo.totalPages":"0","isCalendarView":"false","column-data":"id:10498|id:10499|id:10500|id:10501|id:10502|id:10503|id:10504|id:10505|id:10506|id:10507|id:10508|id:10509","sort-data":"lineItemType,ASCENDING","searchInput.pageInfo.currentPageSize":"25","id":"1909","documentTitle":"Adjustment Line Item List Screen - OC Spend Management","entity":"132"}
+Vary: Accept-Encoding
+Cache-Control: no-cache
+Date: Fri, 09 Aug 2019 13:24:08 GMT
+Server: None

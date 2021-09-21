@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3EF51795-4834-4260-9B98-59888551607A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UITests</RootNamespace>
+    <AssemblyName>UITests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\PassportOffice\Interops\Microsoft.Office.Interop.Outlook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="DataAccess\OcLocalDatabase.cs" />
+    <Compile Include="DataAccess\TestResultDatabase.cs" />
+    <Compile Include="EnvironmentConfiguration.cs" />
+    <Compile Include="EnvironmentType.cs" />
+    <Compile Include="ExecutingMachineInfo.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Extensions\WebDriverExtensions.cs" />
+    <Compile Include="FileSize.cs" />
+    <Compile Include="Models\TimeToLoadModel.cs" />
+    <Compile Include="OcView.cs" />
+    <Compile Include="OfficeApp.cs" />
+    <Compile Include="PageModel\AddInHost.cs" />
+    <Compile Include="PageModel\BasicSettingsPage.cs" />
+    <Compile Include="PageModel\CheckInStatus.cs" />
+    <Compile Include="PageModel\Configurations\GA\Dialogs.cs" />
+    <Compile Include="PageModel\Configurations\EY\Dialogs.cs" />
+    <Compile Include="PageModel\OpenNativeDialog.cs" />
+    <Compile Include="PageModel\OutlookContacts.cs" />
+    <Compile Include="PageModel\OutlookEmailForm.cs" />
+    <Compile Include="PageModel\SelectPersonDialog.cs" />
+    <Compile Include="PageModel\Passport\InvoicePassportPage.cs" />
+    <Compile Include="PageModel\InvoiceSummaryPage.cs" />
+    <Compile Include="PageModel\Passport\PassportHeaderItemList.cs" />
+    <Compile Include="PageModel\Passport\PassportPage.cs" />
+    <Compile Include="PageModel\Passport\PassportPreferencesPage.cs" />
+    <Compile Include="PageModel\Passport\PassportHeaderAdjustmentListItem.cs" />
+    <Compile Include="PageModel\SettingsPage.cs" />
+    <Compile Include="PageModel\Shared\Comparators\CurrencyComparer.cs" />
+    <Compile Include="PageModel\Shared\InvoiceDocumentListItem.cs" />
+    <Compile Include="PageModel\Shared\InvoiceHeaderItem.cs" />
+    <Compile Include="PageModel\Shared\InvoiceLineItem.cs" />
+    <Compile Include="PageModel\Shared\InvoiceListItem.cs" />
+    <Compile Include="PageModel\Configurations\ICD\Dialogs.cs" />
+    <Compile Include="PageModel\Shared\InputControls\CheckBox.cs" />
+    <Compile Include="PageModel\Shared\ListOptions.cs" />
+    <Compile Include="PageModel\EmailGenerator.cs" />
+    <Compile Include="PageModel\Passport\MatterPassportPage.cs" />
+    <Compile Include="PageModel\OfficeApps\Excel.cs" />
+    <Compile Include="PageModel\OfficeApps\Powerpoint.cs" />
+    <Compile Include="PageModel\OfficeApps\Word.cs" />
+    <Compile Include="PageModel\OutlookCalendars.cs" />
+    <Compile Include="PageModel\Shared\EmailListItem.cs" />
+    <Compile Include="PageModel\EmailsListPage.cs" />
+    <Compile Include="PageModel\Selectors\Passport.cs" />
+    <Compile Include="PageModel\Shared\BaseDocumentListItem.cs" />
+    <Compile Include="PageModel\Shared\BreadcrumbsControl.cs" />
+    <Compile Include="PageModel\DocumentSummaryPage.cs" />
+    <Compile Include="PageModel\SaveAsNativeDialog.cs" />
+    <Compile Include="PageModel\Shared\Comparators\BooleanInverterComparer.cs" />
+    <Compile Include="PageModel\Shared\Comparators\DocumentSizeComparer.cs" />
+    <Compile Include="PageModel\Shared\FileOptions.cs" />
+    <Compile Include="PageModel\GlobalDocumentsPage.cs" />
+    <Compile Include="PageModel\Shared\GlobalDocumentListItem.cs" />
+    <Compile Include="PageModel\Shared\Group.cs" />
+    <Compile Include="PageModel\Shared\IDialog.cs" />
+    <Compile Include="PageModel\Shared\InputControls\IIndexedInputControl.cs" />
+    <Compile Include="PageModel\Shared\InputControls\InputControl.cs" />
+    <Compile Include="PageModel\Shared\InputControls\InputControlList.cs" />
+    <Compile Include="PageModel\Shared\ISortDialog.cs" />
+    <Compile Include="PageModel\Shared\MatterDocumentListItem.cs" />
+    <Compile Include="PageModel\Shared\MatterListItem.cs" />
+    <Compile Include="PageModel\Shared\SelectPersonListItem.cs" />
+    <Compile Include="PageModel\Shared\OfficeApplication.cs" />
+    <Compile Include="PageModel\Shared\PeopleListItem.cs" />
+    <Compile Include="PageModel\Shared\NarrativeListItem.cs" />
+    <Compile Include="PageModel\Shared\QuickSearch.cs" />
+    <Compile Include="PageModel\Shared\SortDialog.cs" />
+    <Compile Include="PageModel\Shared\TasksEventsListItem.cs" />
+    <Compile Include="PageModel\Shared\VersionHistoryListItem.cs" />
+    <Compile Include="PageModel\UploadHistoryPage.cs" />
+    <Compile Include="PageModel\TasksEventsListPage.cs" />
+    <Compile Include="PresentationHelper.cs" />
+    <Compile Include="RegressionTesting\EmailRegressionTests.cs" />
+    <Compile Include="RegressionTesting\ExcelContextRegressionTests.cs" />
+    <Compile Include="RegressionTesting\GlobalDocumentsRegressionTests.cs" />
+    <Compile Include="RegressionTesting\MatterDocumentsRegressionTests.cs" />
+    <Compile Include="RegressionTesting\MultipleOfficeAppRegressionTests.cs" />
+    <Compile Include="RegressionTesting\NarrativesRegressionTests.cs" />
+    <Compile Include="RegressionTesting\PeopleRegressionTests.cs" />
+    <Compile Include="RegressionTesting\PowerpointContextRegressionTests .cs" />
+    <Compile Include="RegressionTesting\TasksAndEventsRegressionTests.cs" />
+    <Compile Include="RegressionTesting\WordContextRegressionTests.cs" />
+    <Compile Include="SmokeTesting\EY\GlobalDocumentsSmokeTestsWithPersistenceEnabled.cs" />
+    <Compile Include="SmokeTesting\EY\MatterSmokeTests.cs" />
+    <Compile Include="SmokeTesting\EY\SmokeTestsWithPersistenceEnabled.cs" />
+    <Compile Include="SmokeTesting\GA\ExcelContextSpendInvoiceSmokeTest.cs" />
+    <Compile Include="SmokeTesting\GA\GlobalDocumentsSmokeTestsWithPersistenceEnabled.cs" />
+    <Compile Include="SmokeTesting\GA\GlobalDocumentsSmokeTests.cs" />
+    <Compile Include="PageModel\HelpPage.cs" />
+    <Compile Include="PageModel\Notepad.cs" />
+    <Compile Include="PageModel\Shared\InputControls\DateField.cs" />
+    <Compile Include="PageModel\DocumentsListPage.cs" />
+    <Compile Include="PageModel\IAppInstance.cs" />
+    <Compile Include="PageModel\AppInstance.cs" />
+    <Compile Include="PageModel\InvoicesListPage.cs" />
+    <Compile Include="PageModel\MatterDetailsPage.cs" />
+    <Compile Include="PageModel\MattersListPage.cs" />
+    <Compile Include="PageModel\PeopleListPage.cs" />
+    <Compile Include="PageModel\NarrativesListPage.cs" />
+    <Compile Include="PageModel\OfficeCompanion.cs" />
+    <Compile Include="PageModel\Outlook.cs" />
+    <Compile Include="PageModel\Selectors\Native.cs" />
+    <Compile Include="PageModel\Selectors\Oc.cs" />
+    <Compile Include="PageModel\Shared\Dialog.cs" />
+    <Compile Include="PageModel\Shared\EntityTabs.cs" />
+    <Compile Include="PageModel\Shared\InputControls\AutoComplete.cs" />
+    <Compile Include="PageModel\Shared\InputControls\Dropdown.cs" />
+    <Compile Include="PageModel\Shared\Header.cs" />
+    <Compile Include="PageModel\Shared\InputControls\InputField.cs" />
+    <Compile Include="PageModel\Shared\ItemList.cs" />
+    <Compile Include="PageModel\Shared\ListItem.cs" />
+    <Compile Include="PageModel\Shared\InputControls\TextArea.cs" />
+    <Compile Include="PageModel\Shared\SingleEntityDropPoint.cs" />
+    <Compile Include="PerformanceTesting\PerformanceTestHelpers.cs" />
+    <Compile Include="PerformanceTesting\Constants.cs" />
+    <Compile Include="PerformanceTesting\CpuPerformanceData.cs" />
+    <Compile Include="PerformanceTesting\MemoryData.cs" />
+    <Compile Include="PerformanceTesting\PerformanceLog.cs" />
+    <Compile Include="PerformanceTesting\PerformanceTestRun.cs" />
+    <Compile Include="PerformanceTesting\TestResultManager.cs" />
+    <Compile Include="PerformanceTesting\Tests\OutlookMemoryTests.cs" />
+    <Compile Include="PerformanceTesting\Tests\OutlookStartUpTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PerformanceTesting\Report\PerformanceLogEntry.cs" />
+    <Compile Include="PerformanceTesting\Report\TestType.cs" />
+    <Compile Include="PerformanceTesting\Report\PerformanceReportGenerator.cs" />
+    <Compile Include="PerformanceTesting\Report\TestInformation.cs" />
+    <Compile Include="Resources.Designer.cs" />
+    <Compile Include="SmokeTesting\GA\MatterSmokeTests.cs" />
+    <Compile Include="SmokeTesting\GA\SpendInvoiceSmokeTests.cs" />
+    <Compile Include="SmokeTesting\GA\WordContextSpendInvoiceSmokeTest.cs" />
+    <Compile Include="UITestBase.cs" />
+    <Compile Include="SmokeTesting\ICD\MatterSmokeTests.cs" />
+    <Compile Include="SmokeTesting\GA\SmokeTestsWithPersistenceEnabled.cs" />
+    <Compile Include="SmokeTesting\GA\WordContextGlobalDocumentsSmokeTests.cs" />
+    <Compile Include="SmokeTesting\GA\WordContextMatterSmokeTests.cs" />
+    <Compile Include="SortOrder.cs" />
+    <Compile Include="TestEnvironment.cs" />
+    <Compile Include="TestHelpers.cs" />
+    <Compile Include="WindowHandles.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataAccess\DatabaseCreateScript.sql" />
+    <Content Include="TestData\sender1.msg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\sender2.msg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml">
+      <Version>2.9.1</Version>
+    </PackageReference>
+    <PackageReference Include="HtmlAgilityPack">
+      <Version>1.8.10</Version>
+    </PackageReference>
+    <PackageReference Include="HtmlRenderer.PdfSharp">
+      <Version>1.5.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="LibGit2Sharp">
+      <Version>0.26.0-preview-0080</Version>
+    </PackageReference>
+    <PackageReference Include="LibGit2Sharp.NativeBinaries">
+      <Version>1.0.260</Version>
+    </PackageReference>
+    <PackageReference Include="LiteDB">
+      <Version>4.1.5-alpha</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit">
+      <Version>3.12.0</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit.ConsoleRunner">
+      <Version>3.11.1</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit3TestAdapter">
+      <Version>3.16.1</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="OxyPlot.Wpf">
+      <Version>2015.1.1046-alpha</Version>
+    </PackageReference>
+    <PackageReference Include="Selenium.WebDriver">
+      <Version>3.141.0</Version>
+    </PackageReference>
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver">
+      <Version>2.37.0</Version>
+    </PackageReference>
+    <PackageReference Include="SimWinMouse">
+      <Version>1.0.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IntegratedDriver\IntegratedDriver.csproj">
+      <Project>{0272bf13-918b-4ed0-afc8-8d0bdf2446d1}</Project>
+      <Name>IntegratedDriver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

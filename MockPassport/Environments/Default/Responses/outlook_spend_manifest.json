@@ -1,0 +1,2735 @@
+{
+    "application": {
+        "spend": {
+            "searchListPages": {
+                "invoiceRejectReasonCodesNonSystem": {
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary" ],
+                        "regionToFieldMappings": { "primary": "displayName" }
+                    },
+                    "screenDisplayName": "Select Invoice Reject Reason Codes",
+                    "rowsSelectable": true,
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "displayName",
+                                        "label": "Reject Reason Code"
+                                    },
+                                    {
+                                        "field": "active",
+                                        "label": "Active"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "selectedItemDisplayColumns": [ "displayName" ],
+                    "type": "InvoiceRejectReasonCode",
+                    "listPage": "Invoice Reject Reason Codes Non System"
+                }
+            },
+            "tabs": [
+                {
+                    "visible": {
+                        "method": "isConnected",
+                        "service": "connectionService"
+                    },
+                    "stateName": "spend.invoiceslist",
+                    "label": "My Invoices",
+                    "page": "invoicesList"
+                }
+            ],
+            "services": [
+                {
+                    "serviceLocation": "js/services/spendManagement.service.js",
+                    "serviceName": "spendManagementService"
+                },
+                {
+                    "serviceLocation": "js/services/matterManagementDocument.service.js",
+                    "serviceName": "matterManagementDocumentService"
+                }
+            ],
+            "title": "Spend",
+            "pages": {
+                "invoiceDetail": {
+                    "headerField": "invoiceNumber",
+                    "secondaryPanelHeaderName": "Invoice Totals",
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "name": "calculateInvoiceStartEndDateForInvoiceDetail",
+                                "value": {
+                                    "method": "calculateInvoiceStartEndDateForInvoiceDetail",
+                                    "service": "spendManagementService"
+                                }
+                            }
+                        ]
+                    },
+                    "tabs": [
+                        {
+                            "visible": {
+                                "method": "isDetailInvoice",
+                                "service": "spendManagementService"
+                            },
+                            "stateName": "spend.summary",
+                            "label": "Line Items",
+                            "page": "invoiceDetails",
+                            "showItemList": true,
+                            "titleClass": "ms-Icon--listNumbered"
+                        },
+                        {
+                            "visible": {
+                                "method": "isSubTotalInvoice",
+                                "service": "spendManagementService"
+                            },
+                            "stateName": "spend.summary",
+                            "label": "Line Items",
+                            "page": "invoicesSummaryLineItems",
+                            "showItemList": true,
+                            "titleClass": "ms-Icon--listNumbered"
+                        },
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "stateName": "spend.summary",
+                            "imageUrl": "img/header-32.svg",
+                            "label": "Header Adjustments",
+                            "page": "invoiceHeaderAdjustments",
+                            "showItemList": true
+                        },
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "stateName": "spend.summary",
+                            "isAvailableForCmis": true,
+                            "label": "Documents",
+                            "page": "invoiceDocuments",
+                            "showItemList": true,
+                            "titleClass": "ms-Icon--documents"
+                        }
+                    ],
+                    "type": "invoiceDetail",
+                    "title": "Invoice Detail",
+                    "showSummaryHeaderImage": "true",
+                    "overrideCommands": true,
+                    "isAvailableForCmis": true,
+                    "panelOptions": {
+                        "content": {
+                            "inputFields": [ "matterOrg_organization", "matterOrg_matter", "invoiceDisposition", "invoiceDate", "calculateInvoiceStartEndDateForInvoiceDetail", "receivedDate" ],
+                            "function": {
+                                "method": "combineColumns",
+                                "service": "itemListService"
+                            }
+                        }
+                    },
+                    "imageUrl": "img/invoice.svg",
+                    "invoiceSummaryDetails": {
+                        "adjustments": [
+                            {
+                                "propertyname": "invoiceSummary_feeTotalAdjustmentAmount",
+                                "istotal": false,
+                                "label": "Fee Adjustment"
+                            },
+                            {
+                                "propertyname": "invoiceSummary_expenseTotalAdjustmentAmount",
+                                "istotal": false,
+                                "label": "Expense Adjustment"
+                            },
+                            {
+                                "propertyname": "invoiceSummary_totalNetAmount",
+                                "istotal": true,
+                                "label": "Net Total"
+                            }
+                        ],
+                        "invoiceTotals": [
+                            {
+                                "propertyname": "invoiceSummary_feeTotalGrossAmount",
+                                "istotal": false,
+                                "label": "Fees"
+                            },
+                            {
+                                "propertyname": "invoiceSummary_feeTotalDiscountAmount",
+                                "istotal": false,
+                                "label": "Fee Discount"
+                            },
+                            {
+                                "propertyname": "invoiceSummary_expenseTotalGrossAmount",
+                                "istotal": false,
+                                "label": "Expenses"
+                            },
+                            {
+                                "propertyname": "invoiceSummary_expenseTotalDiscountAmount",
+                                "istotal": false,
+                                "label": "Expense Discount"
+                            },
+                            {
+                                "propertyname": "invoiceSummary_totalTaxAmount",
+                                "istotal": false,
+                                "label": "Taxes"
+                            },
+                            {
+                                "propertyname": "invoiceSummary_totalUnadjustedAmount",
+                                "istotal": true,
+                                "label": "Total"
+                            }
+                        ]
+                    },
+                    "tabSelection": {
+                        "method": "getSelectedTabDetail",
+                        "service": "spendManagementService"
+                    },
+                    "dropFile": {
+                        "method": "queueInvoiceDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "DragDrop|Invoice Summary|File|"
+                    },
+                    "displaySecondaryPanel": "true",
+                    "dropOutlookItem": {
+                        "method": "processMailItem",
+                        "service": "spendManagementService",
+                        "usageEvent": "DragDrop|Invoice Summary|Email|"
+                    },
+                    "secondaryPanelNetAmount": "invoiceSummary_totalNetAmount",
+                    "actions": [
+                        {
+                            "metadata": {
+                                "inputFields": [ "hasDocuments", "Has Attachments" ],
+                                "function": {
+                                    "name": {
+                                        "method": "displayAttachmentsOrWarnings",
+                                        "service": "spendManagementService"
+                                    }
+                                }
+                            },
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "name": "flag",
+                            "column": "hasDocuments",
+                            "defaultClass": "ms-Icon--attachment",
+                            "onlineOnly": true
+                        },
+                        {
+                            "metadata": {
+                                "inputFields": [ "hasWarnings", "warningText" ],
+                                "function": {
+                                    "name": {
+                                        "method": "displayAttachmentsOrWarnings",
+                                        "service": "spendManagementService"
+                                    }
+                                }
+                            },
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "name": "flag",
+                            "column": "hasWarnings",
+                            "defaultClass": "ms-Icon--alert ms-fontColor-yellow",
+                            "onlineOnly": true
+                        },
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "onlineOnly": true,
+                            "label": "Open Invoice",
+                            "click": {
+                                "method": "navigateToInvoiceHeaderEntity",
+                                "service": "spendManagementService"
+                            },
+                            "titleClass": "ms-Icon--link"
+                        },
+                        {
+                            "visible": {
+                                "method": "isDocumentRelatedApp",
+                                "service": "officeService"
+                            },
+                            "onlineOnly": true,
+                            "label": "Quick File",
+                            "click": {
+                                "method": "quickFileDocument",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "QuickFile|Invoice Detail|Document|"
+                            },
+                            "titleClass": "ms-Icon--upload"
+                        },
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "navigateBack": true,
+                            "usageEvent": "Invoice Approved",
+                            "onlineOnly": true,
+                            "commandOperation": "Approve Command",
+                            "label": "Approve Invoice",
+                            "type": "approve",
+                            "click": {
+                                "method": "approveInvoice",
+                                "service": "spendManagementService"
+                            },
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "commandArgs": {
+                                "mode": "Edit",
+                                "displayName": "Approve",
+                                "operationName": "Approve Command",
+                                "command": "OCInvoiceStepApproveCommand",
+                                "itemPage": "",
+                                "targetPage": ""
+                            },
+                            "name": "approve-reject",
+                            "isComponent": true
+                        },
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "navigateBack": true,
+                            "usageEvent": "Invoice Rejected",
+                            "onlineOnly": true,
+                            "commandOperation": "Reject Command",
+                            "label": "Reject Invoice",
+                            "type": "reject",
+                            "click": {
+                                "method": "rejectInvoice",
+                                "service": "spendManagementService"
+                            },
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "commandArgs": {
+                                "mode": "Edit",
+                                "displayName": "Reject",
+                                "operationName": "Reject Command",
+                                "command": "OCInvoiceStepRejectCommand",
+                                "itemPage": "invoiceReject",
+                                "targetPage": "Invoice Header Item For Reject - OC Spend Management"
+                            },
+                            "name": "approve-reject",
+                            "isComponent": true
+                        }
+                    ],
+                    "listPage": "My Invoices - OC Spend Management"
+                },
+                "invoiceLineItemDetails": {
+                    "lineItemDetails": [
+                        {
+                            "propertyname": "personOrg_person_fullName",
+                            "label": "Timekeeper"
+                        },
+                        {
+                            "propertyname": "personOrg_timekeeperLevel_displayName",
+                            "label": "personOrg_timekeeperID",
+                            "isDynamicLabel": true
+                        },
+                        {
+                            "propertyname": "units",
+                            "label": "Units/Hours"
+                        },
+                        {
+                            "propertyname": "rate",
+                            "label": "Rate"
+                        },
+                        {
+                            "propertyname": "discountAmount",
+                            "label": "Discount"
+                        },
+                        {
+                            "propertyname": "redLineAdjustment",
+                            "label": "Adjustments"
+                        },
+                        {
+                            "propertyname": "taxAmount",
+                            "label": "Tax"
+                        },
+                        {
+                            "propertyname": "netAmount",
+                            "label": "Net Amount"
+                        }
+                    ],
+                    "headerField": "Summary",
+                    "lineItemSummary": [
+                        {
+                            "propertyname": "lineItemDate",
+                            "label": "Service Date"
+                        },
+                        {
+                            "propertyname": "typeTaskOrExpenseCode",
+                            "label": "lineItemType",
+                            "isDynamicLabel": true
+                        },
+                        {
+                            "propertyname": "activityCode_code",
+                            "label": "Activity"
+                        },
+                        {
+                            "propertyname": "grossAmount",
+                            "label": "Original Amount"
+                        }
+                    ],
+                    "tabs": [
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "stateName": "spend.lineitemdetails",
+                            "label": "Adjustment History",
+                            "page": "detailLineItemAdjustmentHistory",
+                            "showItemList": true,
+                            "titleClass": "ms-Icon--listNumbered"
+                        }
+                    ],
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "name": "headerContent",
+                                "value": {
+                                    "method": "getLineItemSummary",
+                                    "service": "spendManagementService"
+                                }
+                            },
+                            {
+                                "name": "secondaryHeaderContent",
+                                "value": {
+                                    "method": "getLineItemDetails",
+                                    "service": "spendManagementService"
+                                }
+                            },
+                            {
+                                "name": "tertiaryHeaderContent",
+                                "value": {
+                                    "method": "getDescription",
+                                    "service": "spendManagementService"
+                                }
+                            },
+                            {
+                                "name": "activityCodeDesc",
+                                "value": {
+                                    "method": "concatenateActivityDesc",
+                                    "service": "spendManagementService"
+                                }
+                            },
+                            {
+                                "name": "typeTaskOrExpenseCode",
+                                "value": {
+                                    "method": "concatenateTypeTaskOrExpenseCode",
+                                    "service": "spendManagementService"
+                                }
+                            }
+                        ]
+                    },
+                    "tabSelection": {
+                        "method": "getSelectedTabDetail",
+                        "service": "spendManagementService"
+                    },
+                    "description": [ { "propertyname": "description" } ],
+                    "secondaryHeaderField": "Details",
+                    "tertiaryHeaderField": "Description",
+                    "type": "invoiceLineItemDetails",
+                    "actions": [
+                        {
+                            "metadata": {
+                                "inputFields": [ "hasWarnings", "warningText" ],
+                                "function": {
+                                    "name": {
+                                        "method": "displayAttachmentsOrWarnings",
+                                        "service": "spendManagementService"
+                                    }
+                                }
+                            },
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "name": "flag",
+                            "column": "hasWarnings",
+                            "defaultClass": "ms-Icon--alert ms-fontColor-yellow",
+                            "onlineOnly": true
+                        },
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "usageEvent": "Invoice Line Item Summary|Adjust Line Item",
+                            "onlineOnly": true,
+                            "label": "Make adjustments",
+                            "type": "adjust",
+                            "click": {
+                                "method": "adjustLineItemFromSummary",
+                                "service": "spendManagementService"
+                            },
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "imageUrl": "img/plusminus.svg",
+                            "name": "approve-reject",
+                            "defaultClass": "action adjust hide--nohover",
+                            "options": { "itemPage": { "edit": "trackChangesNetAmount-DetailLineItem" } },
+                            "isComponent": true
+                        }
+                    ],
+                    "listPage": "null"
+                },
+                "detailLineItemAdjustmentHistory": {
+                    "parentFieldName": "detailLineItemChanges",
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "flag2", "meta1", "meta2", "meta3", "actions" ],
+                        "regionToFieldMappings": {
+                            "secondary": "externalComment",
+                            "meta3": "updatedAt",
+                            "meta2": "redLineTotalChange",
+                            "tertiary": "createdBy",
+                            "primary": "reason"
+                        }
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "reason",
+                                        "label": "Adjustment Reason Code"
+                                    },
+                                    {
+                                        "field": "externalComment",
+                                        "label": "Adjustment Reason Description"
+                                    },
+                                    {
+                                        "field": "createdBy",
+                                        "label": "Entered By"
+                                    },
+                                    {
+                                        "field": "redLineTotalChange",
+                                        "label": "Adjustment Amount"
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "label": "Adjustment Date"
+                                    },
+                                    {
+                                        "field": "status",
+                                        "label": "Adjustment Status"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": "DetailLineItemChanges",
+                    "actions": [
+                        {
+                            "visible": {
+                                "method": "isAdjustmentLineItemAccepted",
+                                "service": "spendManagementService"
+                            },
+                            "onlineOnly": true,
+                            "label": "Reject Adjustment",
+                            "type": "custom",
+                            "click": {
+                                "method": "rejectAdjustment",
+                                "service": "spendManagementService"
+                            },
+                            "command": "RejectChangesetCommand",
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "imageUrl": "img/error.png",
+                            "name": "approve-reject",
+                            "defaultClass": "reject-error",
+                            "options": { "itemPage": { "edit": "detailLineItemAdjustReject" } },
+                            "isComponent": true
+                        }
+                    ],
+                    "listPage": "Detail Line Item Adjustment History List - OC Spend Management"
+                },
+                "history": {
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "actions", "meta3" ],
+                        "regionToFieldMappings": {
+                            "secondary": "senderName",
+                            "meta2": "statusLabel",
+                            "tertiary": "additionalInfo",
+                            "primary": "displayName"
+                        }
+                    },
+                    "navigate": "history",
+                    "loader": "loadHistory",
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "displayName",
+                                        "width": "50%",
+                                        "label": "Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "senderName",
+                                        "label": "Sender"
+                                    },
+                                    {
+                                        "field": "date",
+                                        "label": "Upload Date"
+                                    },
+                                    {
+                                        "field": "additionalInfo",
+                                        "width": "50%",
+                                        "label": "Matter",
+                                        "wrapText": true
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "title": "History",
+                    "actions": [
+                        {
+                            "name": "Upload-status",
+                            "defaultClass": {
+                                "canceled": "ms-Icon--infoCircle ms-fontColor-yellow",
+                                "success": "ms-Icon--check ms-fontColor-green",
+                                "automatic": "file-type-icon ms-fontSize-m ms-Icon-md12--AutoEnhanceOff ms-fontColor-green",
+                                "error": "ms-Icon--x ms-fontColor-red"
+                            },
+                            "onlineOnly": false,
+                            "label": {
+                                "canceled": "Cancelled",
+                                "success": "Uploaded",
+                                "automatic": "Uploaded automatically",
+                                "error": "Error: `{errorMessage}`"
+                            }
+                        }
+                    ],
+                    "listPage": "null"
+                },
+                "invoicesSummaryLineItems": {
+                    "parentFieldName": "summaryLineItems",
+                    "navigate": "invoiceSubTotalLineItemDetails",
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "flag2", "meta1", "meta2", "meta3" ],
+                        "regionToFieldMappings": {
+                            "secondary": "taxAmount",
+                            "meta3": "lineItemDate",
+                            "meta2": "redLineTotal",
+                            "meta1": "grossAmount",
+                            "tertiary": "description",
+                            "flag2": {
+                                "falseIconClass": "",
+                                "column": "hasWarnings",
+                                "toolTip": "decodedWarningText",
+                                "trueIconClass": "ms-Icon--alert ms-fontColor-yellow",
+                                "showIcon": true
+                            },
+                            "customCssClass": "lineItem",
+                            "primary": "lineItemType_displayName"
+                        }
+                    },
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "warningText" ],
+                                "name": "decodedWarningText",
+                                "value": {
+                                    "method": "decodeText",
+                                    "service": "frameworkUtilService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "warningCount" ],
+                                "name": "hasWarnings",
+                                "value": {
+                                    "method": "checkLineItemWarnings",
+                                    "service": "spendManagementService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "lineItemType_displayName",
+                                        "label": "Line Item Type"
+                                    },
+                                    {
+                                        "field": "taxAmount",
+                                        "label": "Tax Amount"
+                                    },
+                                    {
+                                        "field": "description",
+                                        "label": "Description"
+                                    },
+                                    {
+                                        "field": "grossAmount",
+                                        "label": "Original Total"
+                                    },
+                                    {
+                                        "field": "redLineTotal",
+                                        "label": "Net Total After Adjustments"
+                                    },
+                                    {
+                                        "field": "lineItemDate",
+                                        "label": "Line Item Service Date"
+                                    },
+                                    {
+                                        "field": "taxableAmount",
+                                        "label": "Taxable Amount"
+                                    },
+                                    {
+                                        "field": "taxRate",
+                                        "label": "Tax Rate"
+                                    },
+                                    {
+                                        "field": "taxType_displayName",
+                                        "label": "Tax Type"
+                                    },
+                                    {
+                                        "field": "hasWarnings",
+                                        "trueClass": "ms-I  con--alert ms-fontColor-yellow",
+                                        "toolTip": "decodedWarningText",
+                                        "isIndicator": true,
+                                        "label": "Has Warnings",
+                                        "falseClass": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "dropFile": {
+                        "method": "queueInvoiceDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "DragDrop|Invoice Summary Line Items|File|"
+                    },
+                    "dropOutlookItem": {
+                        "method": "processMailItem",
+                        "service": "spendManagementService",
+                        "usageEvent": "DragDrop|Invoice Summary Line Items|Email|"
+                    },
+                    "type": "SummaryLineItem",
+                    "actions": [
+                        {
+                            "visible": {
+                                "method": "isNotTaxLineItem",
+                                "service": "spendManagementService"
+                            },
+                            "usageEvent": "Invoice Sub Total Line Items|Adjust Line Item",
+                            "onlineOnly": true,
+                            "label": "Make adjustments",
+                            "type": "adjust",
+                            "click": {
+                                "method": "adjustLineItem",
+                                "service": "spendManagementService"
+                            },
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "imageUrl": "img/plusminus.svg",
+                            "name": "approve-reject",
+                            "defaultClass": "action adjust hide--nohover",
+                            "options": { "itemPage": { "edit": "trackChangesNetAmount-SummaryLineItem" } },
+                            "isComponent": true
+                        },
+                        {
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "visible": {
+                                "method": "isNotTaxLineItem",
+                                "service": "spendManagementService"
+                            },
+                            "usageEvent": "Invoice Sub Total Line Items|Reject Line Item",
+                            "name": "approve-reject",
+                            "options": { "itemPage": { "edit": "trackChangesNetAmount-RejectLineItem" } },
+                            "onlineOnly": true,
+                            "label": "Reject Line Item",
+                            "type": "reject",
+                            "click": {
+                                "method": "rejectLineItem",
+                                "service": "spendManagementService"
+                            },
+                            "isComponent": true
+                        }
+                    ],
+                    "listPage": "Sub Total Invoices - OC Spend Management"
+                },
+                "invoiceDocumentsCmis": {
+                    "parentFieldName": "cmisDocumentsContents",
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "meta1", "meta2", "meta3", "actions" ],
+                        "regionToFieldMappings": {
+                            "secondary": "name",
+                            "meta3": "updatedAt",
+                            "meta2": "formattedFileSize",
+                            "tertiary": "updatedBy",
+                            "primary": "name"
+                        },
+                        "hasSecondaryActions": true
+                    },
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "documentSize" ],
+                                "name": "formattedFileSize",
+                                "value": {
+                                    "method": "setFormattedDocumentSize",
+                                    "service": "itemListService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "name" ],
+                                "value": {
+                                    "method": "setIconForDocument",
+                                    "service": "documentsService"
+                                }
+                            },
+                            {
+                                "value": {
+                                    "method": "cmisObjectIdCode",
+                                    "service": "documentsService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "documentStatus" ],
+                                "value": {
+                                    "method": "setDocumentStatus",
+                                    "service": "documentsService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "name",
+                                        "width": "33%",
+                                        "label": "Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "name",
+                                        "width": "33%",
+                                        "label": "File Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedBy",
+                                        "width": "33%",
+                                        "label": "Last Modified By",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "label": "Updated At"
+                                    },
+                                    {
+                                        "field": "formattedFileSize",
+                                        "label": "Size"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "show": {
+                        "method": "showDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "View Item|Document"
+                    },
+                    "folderPageRef": "invoiceDocumentsFolderCmis",
+                    "title": "Invoice Documents",
+                    "type": "PassportCmisObject",
+                    "filterBy": {
+                        "values": [ "", "No" ],
+                        "column": "isPrivateWorkingCopy"
+                    },
+                    "listContentType": "file",
+                    "sortBy": "name,ASCENDING",
+                    "drag": {
+                        "method": "dragItem",
+                        "service": "matterManagementService"
+                    },
+                    "actions": [
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "id": "Download",
+                            "label": "Download document",
+                            "click": {
+                                "method": "saveDocumentAs",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "Download|Invoice Document"
+                            },
+                            "titleClass": "ms-Icon--download"
+                        },
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "id": "Comments",
+                            "label": "Comments",
+                            "titleClass": "ms-Icon--chat"
+                        }
+                    ],
+                    "listPage": "null"
+                },
+                "invoiceDocumentsFolderCmis": {
+                    "parentFieldName": "contents",
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "meta1", "meta2", "meta3", "actions" ],
+                        "regionToFieldMappings": {
+                            "secondary": "name",
+                            "meta3": "updatedAt",
+                            "meta2": "formattedFileSize",
+                            "tertiary": "updatedBy",
+                            "primary": "name"
+                        },
+                        "hasSecondaryActions": true
+                    },
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "documentSize" ],
+                                "name": "formattedFileSize",
+                                "value": {
+                                    "method": "setFormattedDocumentSize",
+                                    "service": "itemListService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "name" ],
+                                "value": {
+                                    "method": "setIconForDocument",
+                                    "service": "documentsService"
+                                }
+                            },
+                            {
+                                "value": {
+                                    "method": "cmisObjectIdCode",
+                                    "service": "documentsService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "documentStatus" ],
+                                "value": {
+                                    "method": "setDocumentStatus",
+                                    "service": "documentsService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "name",
+                                        "width": "33%",
+                                        "label": "Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "name",
+                                        "width": "33%",
+                                        "label": "File Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedBy",
+                                        "width": "33%",
+                                        "label": "Last Modified By",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "label": "Updated At"
+                                    },
+                                    {
+                                        "field": "formattedFileSize",
+                                        "label": "Size"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "show": {
+                        "method": "showDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "View Item|Document"
+                    },
+                    "title": "Invoice Documents",
+                    "type": "PassportCmisObject",
+                    "filterBy": {
+                        "values": [ "", "No" ],
+                        "column": "isPrivateWorkingCopy"
+                    },
+                    "listContentType": "file",
+                    "sortBy": "name,ASCENDING",
+                    "drag": {
+                        "method": "dragItem",
+                        "service": "matterManagementService"
+                    },
+                    "actions": [
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "id": "Download",
+                            "label": "Download document",
+                            "click": {
+                                "method": "saveDocumentAs",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "Download|Invoice Document"
+                            },
+                            "titleClass": "ms-Icon--download"
+                        },
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "id": "Comments",
+                            "label": "Comments",
+                            "titleClass": "ms-Icon--chat"
+                        }
+                    ],
+                    "listPage": "null"
+                },
+                "invoiceSubTotalLineItemDetails": {
+                    "lineItemDetails": [
+                        {
+                            "propertyname": "lineItemType_displayName",
+                            "label": "Line Item Type"
+                        }
+                    ],
+                    "headerField": "Summary",
+                    "tabs": [
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "stateName": "spend.lineitemdetails",
+                            "label": "Adjustment History",
+                            "page": "summaryLineItemAdjustmentHistory",
+                            "showItemList": true,
+                            "titleClass": "ms-Icon--listNumbered"
+                        }
+                    ],
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "name": "headerContent",
+                                "value": {
+                                    "method": "getLineItemTaxSummary",
+                                    "service": "spendManagementService"
+                                }
+                            },
+                            {
+                                "name": "headerContent",
+                                "value": {
+                                    "method": "getLineItemSummary",
+                                    "service": "spendManagementService"
+                                }
+                            },
+                            {
+                                "name": "secondaryHeaderContent",
+                                "value": {
+                                    "method": "getLineItemDetails",
+                                    "service": "spendManagementService"
+                                }
+                            },
+                            {
+                                "name": "tertiaryHeaderContent",
+                                "value": {
+                                    "method": "getDescription",
+                                    "service": "spendManagementService"
+                                }
+                            }
+                        ]
+                    },
+                    "description": [ { "propertyname": "description" } ],
+                    "secondaryHeaderField": "Details",
+                    "tertiaryHeaderField": "Description",
+                    "type": "invoiceSubTotalLineItemDetails",
+                    "lineItemSummary": [
+                        {
+                            "propertyname": "grossAmount",
+                            "label": "Original Total"
+                        },
+                        {
+                            "propertyname": "redLineAdjustment",
+                            "label": "Adjustments"
+                        },
+                        {
+                            "propertyname": "redLineTotal",
+                            "label": "Net Total After Adjustments"
+                        }
+                    ],
+                    "tabSelection": {
+                        "method": "getSelectedTabDetail",
+                        "service": "spendManagementService"
+                    },
+                    "actions": [
+                        {
+                            "visible": {
+                                "method": "isNotTaxLineItem",
+                                "service": "spendManagementService"
+                            },
+                            "usageEvent": "Sub Total Invoice Line Item Summary|Adjust Line Item",
+                            "onlineOnly": true,
+                            "label": "Make adjustments",
+                            "type": "adjust",
+                            "click": {
+                                "method": "adjustLineItemFromSummary",
+                                "service": "spendManagementService"
+                            },
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "imageUrl": "img/plusminus.svg",
+                            "name": "approve-reject",
+                            "defaultClass": "action adjust hide--nohover",
+                            "options": { "itemPage": { "edit": "trackChangesNetAmount-SummaryLineItem" } },
+                            "isComponent": true
+                        }
+                    ],
+                    "lineItemTaxSummary": [
+                        {
+                            "propertyname": "taxAmount",
+                            "label": "Tax Amount"
+                        },
+                        {
+                            "propertyname": "taxableAmount",
+                            "label": "Taxable Amount"
+                        },
+                        {
+                            "propertyname": "taxRate",
+                            "label": "Tax Rate"
+                        },
+                        {
+                            "propertyname": "taxType_displayName",
+                            "label": "Tax Type"
+                        }
+                    ],
+                    "listPage": "null"
+                },
+                "invoiceDocuments": {
+                    "parentFieldName": "documents",
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "meta1", "meta2", "meta3", "actions" ],
+                        "regionToFieldMappings": {
+                            "secondary": "documentFileName",
+                            "meta3": "updatedAt",
+                            "meta2": "formattedFileSize",
+                            "tertiary": "lastModifiedByFullName",
+                            "primary": "name"
+                        },
+                        "hasSecondaryActions": true
+                    },
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "documentSize" ],
+                                "name": "formattedFileSize",
+                                "value": {
+                                    "method": "setFormattedDocumentSize",
+                                    "service": "itemListService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "documentFileName" ],
+                                "value": {
+                                    "method": "setIconForDocument",
+                                    "service": "documentsService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "name",
+                                        "width": "33%",
+                                        "label": "Document Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "documentFileName",
+                                        "width": "33%",
+                                        "label": "File Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "label": "Status",
+                                        "isAction": true
+                                    },
+                                    {
+                                        "field": "lastModifiedByFullName",
+                                        "width": "33%",
+                                        "label": "Last Modified By",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "label": "Updated At"
+                                    },
+                                    {
+                                        "field": "formattedFileSize",
+                                        "label": "Size"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "show": {
+                        "method": "showDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "View Item|Invoice Document"
+                    },
+                    "folderPageRef": "invoiceDocumentsFolder",
+                    "title": "Invoice Documents",
+                    "type": "InvoiceMatterManagementDocument",
+                    "listContentType": "file",
+                    "dropFile": {
+                        "method": "queueInvoiceDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "DragDrop|Invoice Documents|File|"
+                    },
+                    "drag": {
+                        "method": "dragItem",
+                        "service": "spendManagementService"
+                    },
+                    "dropOutlookItem": {
+                        "method": "processMailItem",
+                        "service": "spendManagementService",
+                        "usageEvent": "DragDrop|Invoice Documents|Email|"
+                    },
+                    "actions": [
+                        {
+                            "showOnlyInActionBar": true,
+                            "visible": {
+                                "method": "isFolderingEnabled",
+                                "service": "documentsService"
+                            },
+                            "name": "Add Folder",
+                            "defaultClass": "ms-Icon--trash hover--red",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Add Folder",
+                            "click": {
+                                "method": "addInvoiceDocumentFolder",
+                                "service": "spendManagementService",
+                                "usageEvent": "Add Folder|Folders"
+                            },
+                            "actionBarSettings": {
+                                "showOnlyOnItemSelection": false,
+                                "iconPendingClass": "actionsSpinner",
+                                "icon": "ms-Icon--plus2",
+                                "label": "Add Folder",
+                                "titleClass": "ms-Icon--link"
+                            },
+                            "isComponent": false
+                        },
+                        {
+                            "menuInViewportClass": "menu-in-viewport",
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "menuBelowViewportClass": "menu-below-viewport",
+                            "repeatColumnIndex": 2,
+                            "menuActionItems": [
+                                { "actionId": "Checkout" },
+                                { "actionId": "Discardcheckout" },
+                                { "actionId": "Checkin" }
+                            ],
+                            "label": "Document options",
+                            "pageContainerClass": "detail-list",
+                            "actionParentClass": "actionParent",
+                            "name": "contextualmenu",
+                            "defaultClass": "ms-Icon--menu",
+                            "menuContainerClass": "ms-ListItem-contextMenu",
+                            "id": "contextualmenu",
+                            "actionMenuClass": "action-menu"
+                        },
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "repeatColumnIndex": 2,
+                            "usageEvent": "Check Out|Invoice Document",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Check Out",
+                            "toggledClass": "ms-Icon--documentForward disabled",
+                            "responsive": "true",
+                            "name": "Checkout",
+                            "defaultClass": "ms-Icon--documentForward",
+                            "id": "Checkout",
+                            "isComponent": true
+                        },
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "repeatColumnIndex": 2,
+                            "usageEvent": "Discard Check Out|Invoice Document",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Discard Check Out",
+                            "toggledClass": "ms-Icon--documentForward disabled",
+                            "responsive": "true",
+                            "name": "Discardcheckout",
+                            "defaultClass": "ms-Icon--documentForward",
+                            "id": "Discardcheckout",
+                            "isComponent": true
+                        },
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "repeatColumnIndex": 2,
+                            "usageEvent": "Check In|Invoice Document",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Check In",
+                            "toggledClass": "ms-Icon--documentReply disabled",
+                            "responsive": "true",
+                            "name": "Checkin",
+                            "defaultClass": "ms-Icon--documentReply",
+                            "id": "Checkin",
+                            "isComponent": true
+                        },
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "id": "Download",
+                            "label": "Download document",
+                            "click": {
+                                "method": "saveDocumentAs",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "Download|Invoice Document"
+                            },
+                            "titleClass": "ms-Icon--download"
+                        },
+                        {
+                            "visible": {
+                                "method": "isFolder",
+                                "service": "documentsService"
+                            },
+                            "name": "Edit",
+                            "defaultClass": "ms-Icon-md12 ms-Icon-md12--Rename",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "id": "RenameFolder",
+                            "label": "Rename Folder",
+                            "click": {
+                                "method": "renameFolder",
+                                "service": "documentsService"
+                            }
+                        },
+                        {
+                            "visible": [
+                                {
+                                    "method": "isFolder",
+                                    "service": "documentsService"
+                                },
+                                {
+                                    "method": "isDocumentRelatedApp",
+                                    "service": "officeService"
+                                }
+                            ],
+                            "onlineOnly": true,
+                            "id": "QuickFile",
+                            "label": "Quick File",
+                            "click": {
+                                "method": "quickFileDocument",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "QuickFile|Invoice|Folder|Document|"
+                            },
+                            "titleClass": "ms-Icon--upload"
+                        },
+                        {
+                            "getToggledStatus": {
+                                "method": "isLockedForMe",
+                                "service": "documentsService"
+                            },
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "usageEvent": "Delete Item|Invoice Document",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Delete document",
+                            "click": {
+                                "method": "removeDocument",
+                                "service": "documentsService"
+                            },
+                            "toggledClass": "ms-Icon--trash hide--nohover disabled",
+                            "name": "Delete",
+                            "options": {
+                                "dialog": {
+                                    "title": "Delete document",
+                                    "message": "Are you sure you want to delete '{name}' from the invoice? </br>This action cannot be undone."
+                                }
+                            },
+                            "defaultClass": "ms-Icon--trash hover--red hide--nohover",
+                            "id": "DeleteDocument",
+                            "isComponent": true
+                        },
+                        {
+                            "getToggledStatus": {
+                                "method": "isLockedForMe",
+                                "service": "documentsService"
+                            },
+                            "visible": {
+                                "method": "isFolder",
+                                "service": "documentsService"
+                            },
+                            "usageEvent": "Delete Item|Invoice Document Folder",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Delete folder",
+                            "click": {
+                                "method": "removeDocument",
+                                "service": "documentsService"
+                            },
+                            "name": "Delete",
+                            "options": {
+                                "dialog": {
+                                    "title": "Delete Folder",
+                                    "message": "Are you sure you want to delete folder '{name}' from the invoice? </br>All the documents in this folder will be deleted. This action cannot be undone."
+                                }
+                            },
+                            "defaultClass": "ms-Icon--trash hover--red hide--nohover",
+                            "id": "DeleteFolder",
+                            "isComponent": true
+                        }
+                    ],
+                    "listPage": "Render InvoiceMatterManagementDocuments List Screen - OC Spend Management"
+                },
+                "invoicesList": {
+                    "overrideCommands": true,
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "flag1", "flag2", "meta1", "meta2", "meta3", "actions" ],
+                        "regionToFieldMappings": {
+                            "secondary": "matterOrg_organization",
+                            "meta3": "receivedDate",
+                            "meta2": "invoiceSummary_totalNetAmount",
+                            "meta1": "noOfDays",
+                            "tertiary": "matterOrg_matter",
+                            "context": "detail-list",
+                            "flag2": {
+                                "falseIconClass": "",
+                                "field": "hasWarnings",
+                                "toolTip": "decodedWarningText",
+                                "trueIconClass": "ms-Icon--alert ms-fontColor-yellow",
+                                "showIcon": true
+                            },
+                            "flag1": {
+                                "falseIconClass": "",
+                                "field": "hasDocuments",
+                                "toolTip": "Has Attachments",
+                                "trueIconClass": "ms-Icon--attachment",
+                                "showIcon": true
+                            },
+                            "customCssClass": "invoicesList",
+                            "primary": "invoiceNumber"
+                        }
+                    },
+                    "navigate": "invoiceDetail",
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "warningText" ],
+                                "name": "decodedWarningText",
+                                "value": {
+                                    "method": "decodeText",
+                                    "service": "frameworkUtilService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "daysAtCurrentStep" ],
+                                "name": "noOfDays",
+                                "value": {
+                                    "method": "concatenateDays",
+                                    "service": "spendManagementService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "invoiceNumber",
+                                        "width": "50%",
+                                        "label": "Invoice Number",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "matterOrg_organization",
+                                        "width": "50%",
+                                        "label": "Organization",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "matterOrg_matter",
+                                        "width": "50%",
+                                        "label": "Matter",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "daysAtCurrentStep",
+                                        "label": "Days at Step"
+                                    },
+                                    {
+                                        "field": "invoiceSummary_totalNetAmount",
+                                        "label": "Total Net Amount"
+                                    },
+                                    {
+                                        "field": "receivedDate",
+                                        "label": "Received Date"
+                                    },
+                                    {
+                                        "field": "hasDocuments",
+                                        "trueClass": "ms-Icon--attachment",
+                                        "isIndicator": true,
+                                        "toolTip": "Has Attachments",
+                                        "label": "Has Attachment",
+                                        "falseClass": ""
+                                    },
+                                    {
+                                        "field": "hasWarnings",
+                                        "trueClass": "ms-Icon--alert ms-fontColor-yellow",
+                                        "isIndicator": true,
+                                        "toolTip": "decodedWarningText",
+                                        "label": "Has Warnings",
+                                        "falseClass": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "constructor": [
+                        {
+                            "name": "expire",
+                            "options": { "expireTime": 15000 }
+                        },
+                        { "name": "update" }
+                    ],
+                    "dropFile": {
+                        "method": "queueInvoiceDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "DragDrop|Invoice List|File|"
+                    },
+                    "dropOutlookItem": {
+                        "method": "processMailItem",
+                        "service": "spendManagementService",
+                        "usageEvent": "DragDrop|Invoice List|Email|"
+                    },
+                    "title": "Spend Management",
+                    "type": "InvoiceHeader",
+                    "actions": [
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "onlineOnly": true,
+                            "label": "Open Invoice",
+                            "click": {
+                                "method": "navigateToInvoiceHeaderEntity",
+                                "service": "spendManagementService"
+                            },
+                            "titleClass": "ms-Icon--link"
+                        },
+                        {
+                            "visible": {
+                                "method": "isDocumentRelatedApp",
+                                "service": "officeService"
+                            },
+                            "onlineOnly": true,
+                            "label": "Quick File",
+                            "click": {
+                                "method": "quickFileDocument",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "QuickFile|Invoice List|Document|"
+                            },
+                            "titleClass": "ms-Icon--upload"
+                        },
+                        {
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "usageEvent": "Invoice Approved",
+                            "commandArgs": {
+                                "mode": "Edit",
+                                "displayName": "Approve",
+                                "operationName": "Approve Command",
+                                "command": "OCInvoiceStepApproveCommand",
+                                "itemPage": "",
+                                "targetPage": ""
+                            },
+                            "name": "approve-reject",
+                            "onlineOnly": true,
+                            "commandOperation": "Approve Command",
+                            "label": "Approve Invoice",
+                            "type": "approve",
+                            "click": {
+                                "method": "approveInvoice",
+                                "service": "spendManagementService"
+                            },
+                            "isComponent": true
+                        },
+                        {
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "usageEvent": "Invoice Rejected",
+                            "commandArgs": {
+                                "mode": "Edit",
+                                "displayName": "Reject",
+                                "operationName": "Reject Command",
+                                "command": "OCInvoiceStepRejectCommand",
+                                "itemPage": "invoiceReject",
+                                "targetPage": "Invoice Header Item For Reject - OC Spend Management"
+                            },
+                            "name": "approve-reject",
+                            "onlineOnly": true,
+                            "commandOperation": "Reject Command",
+                            "label": "Reject Invoice",
+                            "type": "reject",
+                            "click": {
+                                "method": "rejectInvoice",
+                                "service": "spendManagementService"
+                            },
+                            "isComponent": true
+                        }
+                    ],
+                    "listPage": "My Invoices - OC Spend Management"
+                },
+                "invoiceDetails": {
+                    "parentFieldName": "detailLineItems",
+                    "navigate": "invoiceLineItemDetails",
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "flag2", "meta1", "meta2", "meta3" ],
+                        "regionToFieldMappings": {
+                            "secondary": "typeTaskOrExpenseCode",
+                            "meta3": "lineItemDate",
+                            "meta2": "netAmount",
+                            "meta1": "grossAmount",
+                            "tertiary": "description",
+                            "flag2": {
+                                "falseIconClass": "",
+                                "field": "hasWarnings",
+                                "toolTip": "decodedWarningText",
+                                "trueIconClass": "ms-Icon--alert ms-fontColor-yellow",
+                                "showIcon": true
+                            },
+                            "customCssClass": "lineItem",
+                            "primary": "lineItemType"
+                        }
+                    },
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "name": "typeTaskOrExpenseCode",
+                                "value": {
+                                    "method": "concatenateTypeTaskOrExpenseCode",
+                                    "service": "spendManagementService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "warningText" ],
+                                "name": "decodedWarningText",
+                                "value": {
+                                    "method": "decodeText",
+                                    "service": "frameworkUtilService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "warningCount" ],
+                                "name": "hasWarnings",
+                                "value": {
+                                    "method": "checkLineItemWarnings",
+                                    "service": "spendManagementService"
+                                }
+                            },
+                            {
+                                "name": "activityCodeDesc",
+                                "value": {
+                                    "method": "concatenateActivityDesc",
+                                    "service": "spendManagementService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "lineItemType",
+                                        "label": "Line Item Type"
+                                    },
+                                    {
+                                        "field": "typeTaskOrExpenseCode",
+                                        "label": "UTBMS Code - Description"
+                                    },
+                                    {
+                                        "field": "description",
+                                        "label": "Description"
+                                    },
+                                    {
+                                        "field": "personOrg_person_fullName",
+                                        "label": "Timekeeper"
+                                    },
+                                    {
+                                        "field": "grossAmount",
+                                        "label": "Original Total"
+                                    },
+                                    {
+                                        "field": "netAmount",
+                                        "label": "Net Total After Adjustments"
+                                    },
+                                    {
+                                        "field": "lineItemDate",
+                                        "label": "Line Item Service Date"
+                                    },
+                                    {
+                                        "field": "hasWarnings",
+                                        "trueClass": "ms-Icon--alert ms-fontColor-yellow",
+                                        "toolTip": "decodedWarningText",
+                                        "isIndicator": true,
+                                        "label": "Has Warnings",
+                                        "falseClass": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "dropFile": {
+                        "method": "queueInvoiceDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "DragDrop|Invoice Details|File|"
+                    },
+                    "dropOutlookItem": {
+                        "method": "processMailItem",
+                        "service": "spendManagementService",
+                        "usageEvent": "DragDrop|Invoice Details|Email|"
+                    },
+                    "type": "DetailLineItem",
+                    "actions": [
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "usageEvent": "Invoice Line Items|Adjust Line Item",
+                            "onlineOnly": true,
+                            "label": "Make adjustments",
+                            "type": "adjust",
+                            "click": {
+                                "method": "adjustLineItem",
+                                "service": "spendManagementService"
+                            },
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "imageUrl": "img/plusminus.svg",
+                            "name": "approve-reject",
+                            "defaultClass": "action adjust hide--nohover",
+                            "options": { "itemPage": { "edit": "trackChangesNetAmount-DetailLineItem" } },
+                            "isComponent": true
+                        },
+                        {
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "usageEvent": "Invoice Line Items|Reject Line Item",
+                            "name": "approve-reject",
+                            "options": { "itemPage": { "edit": "trackChangesNetAmount-RejectLineItem" } },
+                            "onlineOnly": true,
+                            "commandOperation": "Reject Command",
+                            "label": "Reject Line Item",
+                            "type": "reject",
+                            "click": {
+                                "method": "rejectLineItem",
+                                "service": "spendManagementService"
+                            },
+                            "isComponent": true
+                        }
+                    ],
+                    "listPage": "DetailLineItemListScreen - OC Spend Management"
+                },
+                "invoiceHeaderAdjustments": {
+                    "parentFieldName": "adjustmentLineItems",
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "flag2", "meta1", "meta2", "meta3", "actions" ],
+                        "regionToFieldMappings": {
+                            "secondary": "initialAmount",
+                            "meta3": "adjustmentAmount",
+                            "meta2": "redLineTotal",
+                            "tertiary": "lineItemDate",
+                            "primary": "lineItemType_displayName"
+                        }
+                    },
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "value": {
+                                    "method": "setInitialAndAdjustmentAmount",
+                                    "service": "spendManagementService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "lineItemType",
+                                        "label": "Adjustment Type"
+                                    },
+                                    {
+                                        "field": "initialAmount",
+                                        "label": "Original Total"
+                                    },
+                                    {
+                                        "field": "lineItemDate",
+                                        "label": "Date"
+                                    },
+                                    {
+                                        "field": "redLineTotal",
+                                        "label": "Net Amount "
+                                    },
+                                    {
+                                        "field": "adjustmentAmount",
+                                        "label": "Adjustment Amount "
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "dropFile": {
+                        "method": "queueInvoiceDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "DragDrop|Invoice Adjustment|File|"
+                    },
+                    "dropOutlookItem": {
+                        "method": "processMailItem",
+                        "service": "spendManagementService",
+                        "usageEvent": "DragDrop|Invoice Adjustment|Email|"
+                    },
+                    "title": "Invoice Header Ajustments",
+                    "type": "AdjustmentLineItem",
+                    "actions": [
+                        {
+                            "visible": {
+                                "method": "isAnyOfficeApp",
+                                "service": "officeService"
+                            },
+                            "usageEvent": "Invoice Header|Adjust Line Item",
+                            "onlineOnly": true,
+                            "label": "Make adjustments",
+                            "type": "adjust",
+                            "click": {
+                                "method": "adjustLineItem",
+                                "service": "spendManagementService"
+                            },
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "imageUrl": "img/plusminus.svg",
+                            "name": "approve-reject",
+                            "defaultClass": "action adjust hide--nohover",
+                            "options": { "itemPage": { "edit": "trackChangesNetAmount-AdjustmentHeaderItem" } },
+                            "isComponent": true
+                        }
+                    ],
+                    "listPage": "Adjustment Line Item List Screen - OC Spend Management"
+                },
+                "invoiceDocumentsFolder": {
+                    "parentFieldName": "documents",
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "meta1", "meta2", "meta3", "actions" ],
+                        "regionToFieldMappings": {
+                            "secondary": "documentFileName",
+                            "meta3": "updatedAt",
+                            "meta2": "formattedFileSize",
+                            "tertiary": "lastModifiedByFullName",
+                            "primary": "name"
+                        },
+                        "hasSecondaryActions": true
+                    },
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "documentSize" ],
+                                "name": "formattedFileSize",
+                                "value": {
+                                    "method": "setFormattedDocumentSize",
+                                    "service": "itemListService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "documentFileName" ],
+                                "value": {
+                                    "method": "setIconForDocument",
+                                    "service": "documentsService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "name",
+                                        "width": "33%",
+                                        "label": "Document Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "documentFileName",
+                                        "width": "33%",
+                                        "label": "File Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "label": "Status",
+                                        "isAction": true
+                                    },
+                                    {
+                                        "field": "lastModifiedByFullName",
+                                        "width": "33%",
+                                        "label": "Last Modified By",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "label": "Updated At"
+                                    },
+                                    {
+                                        "field": "formattedFileSize",
+                                        "label": "Size"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "show": {
+                        "method": "showDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "View Item|Invoice Document"
+                    },
+                    "title": "Invoice Documents",
+                    "type": "InvoiceMatterManagementDocument",
+                    "listContentType": "file",
+                    "dropFile": {
+                        "method": "queueInvoiceDocument",
+                        "service": "matterManagementDocumentService",
+                        "usageEvent": "DragDrop|Invoice Documents with Foldering|File|"
+                    },
+                    "drag": {
+                        "method": "dragItem",
+                        "service": "spendManagementService"
+                    },
+                    "dropOutlookItem": {
+                        "method": "processMailItem",
+                        "service": "spendManagementService",
+                        "usageEvent": "DragDrop|Invoice Documents with Foldering|Email|"
+                    },
+                    "actions": [
+                        {
+                            "showOnlyInActionBar": true,
+                            "visible": {
+                                "method": "isFolderingEnabled",
+                                "service": "documentsService"
+                            },
+                            "name": "Add Folder",
+                            "defaultClass": "ms-Icon--trash hover--red",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Add Folder",
+                            "click": {
+                                "method": "addInvoiceDocumentFolder",
+                                "service": "spendManagementService",
+                                "usageEvent": "Add Folder|Folders"
+                            },
+                            "actionBarSettings": {
+                                "showOnlyOnItemSelection": false,
+                                "iconPendingClass": "actionsSpinner",
+                                "icon": "ms-Icon--plus2",
+                                "label": "Add Folder",
+                                "titleClass": "ms-Icon--link"
+                            },
+                            "isComponent": false
+                        },
+                        {
+                            "menuInViewportClass": "menu-in-viewport",
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "menuBelowViewportClass": "menu-below-viewport",
+                            "repeatColumnIndex": 2,
+                            "menuActionItems": [
+                                { "actionId": "Checkout" },
+                                { "actionId": "Discardcheckout" },
+                                { "actionId": "Checkin" }
+                            ],
+                            "label": "Document options",
+                            "pageContainerClass": "detail-list",
+                            "actionParentClass": "actionParent",
+                            "name": "contextualmenu",
+                            "defaultClass": "ms-Icon--menu",
+                            "menuContainerClass": "ms-ListItem-contextMenu",
+                            "id": "contextualmenu",
+                            "actionMenuClass": "action-menu"
+                        },
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "repeatColumnIndex": 2,
+                            "usageEvent": "Check Out|Invoice Document",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Check Out",
+                            "toggledClass": "ms-Icon--documentForward disabled",
+                            "responsive": "true",
+                            "name": "Checkout",
+                            "defaultClass": "ms-Icon--documentForward",
+                            "id": "Checkout",
+                            "isComponent": true
+                        },
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "repeatColumnIndex": 2,
+                            "usageEvent": "Discard Check Out|Invoice Document",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Discard Check Out",
+                            "toggledClass": "ms-Icon--documentForward disabled",
+                            "responsive": "true",
+                            "name": "Discardcheckout",
+                            "defaultClass": "ms-Icon--documentForward",
+                            "id": "Discardcheckout",
+                            "isComponent": true
+                        },
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "repeatColumnIndex": 2,
+                            "usageEvent": "Check In|Invoice Document",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Check In",
+                            "toggledClass": "ms-Icon--documentReply disabled",
+                            "responsive": "true",
+                            "name": "Checkin",
+                            "defaultClass": "ms-Icon--documentReply",
+                            "id": "Checkin",
+                            "isComponent": true
+                        },
+                        {
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "id": "Download",
+                            "label": "Download document",
+                            "click": {
+                                "method": "saveDocumentAs",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "Download|Invoice Document"
+                            },
+                            "titleClass": "ms-Icon--download"
+                        },
+                        {
+                            "visible": {
+                                "method": "isFolder",
+                                "service": "documentsService"
+                            },
+                            "name": "Edit",
+                            "defaultClass": "ms-Icon-md12 ms-Icon-md12--Rename",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "id": "RenameFolder",
+                            "label": "Rename Folder",
+                            "click": {
+                                "method": "renameFolder",
+                                "service": "documentsService"
+                            }
+                        },
+                        {
+                            "visible": [
+                                {
+                                    "method": "isFolder",
+                                    "service": "documentsService"
+                                },
+                                {
+                                    "method": "isDocumentRelatedApp",
+                                    "service": "officeService"
+                                }
+                            ],
+                            "onlineOnly": true,
+                            "id": "QuickFile",
+                            "label": "Quick File",
+                            "click": {
+                                "method": "quickFileDocument",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "QuickFile|Invoice|Folder|Document|"
+                            },
+                            "titleClass": "ms-Icon--upload"
+                        },
+                        {
+                            "getToggledStatus": {
+                                "method": "isLockedForMe",
+                                "service": "documentsService"
+                            },
+                            "visible": {
+                                "method": "isNotFolder",
+                                "service": "documentsService"
+                            },
+                            "usageEvent": "Delete Item|Invoice Document",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Delete document",
+                            "click": {
+                                "method": "removeDocument",
+                                "service": "documentsService"
+                            },
+                            "toggledClass": "ms-Icon--trash hide--nohover disabled",
+                            "name": "Delete",
+                            "options": {
+                                "dialog": {
+                                    "title": "Delete document",
+                                    "message": "Are you sure you want to delete '{name}' from the invoice? </br>This action cannot be undone."
+                                }
+                            },
+                            "defaultClass": "ms-Icon--trash hover--red hide--nohover",
+                            "id": "DeleteDocument",
+                            "isComponent": true
+                        },
+                        {
+                            "getToggledStatus": {
+                                "method": "isLockedForMe",
+                                "service": "documentsService"
+                            },
+                            "visible": {
+                                "method": "isFolder",
+                                "service": "documentsService"
+                            },
+                            "usageEvent": "Delete Item|Invoice Document Folder",
+                            "onlineOnly": true,
+                            "pendingClass": "actionsSpinner",
+                            "label": "Delete folder",
+                            "click": {
+                                "method": "removeDocument",
+                                "service": "documentsService"
+                            },
+                            "toggledClass": "ms-Icon--trash hide--nohover disabled",
+                            "name": "Delete",
+                            "options": {
+                                "dialog": {
+                                    "title": "Delete Folder",
+                                    "message": "Are you sure you want to delete folder '{name}' from the invoice? </br>All the documents in this folder will be deleted. This action cannot be undone."
+                                }
+                            },
+                            "defaultClass": "ms-Icon--trash hover--red hide--nohover",
+                            "id": "DeleteFolder",
+                            "isComponent": true
+                        }
+                    ],
+                    "listPage": "Render Folder InvoiceMatterManagementDocuments List Screen - OC Spend Management"
+                },
+                "summaryLineItemAdjustmentHistory": {
+                    "parentFieldName": "summaryLineItemChanges",
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "flag2", "meta1", "meta2", "meta3", "actions" ],
+                        "regionToFieldMappings": {
+                            "secondary": "externalComment",
+                            "meta3": "updatedAt",
+                            "meta2": "redLineTotalChange",
+                            "tertiary": "createdBy",
+                            "primary": "reason"
+                        }
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "reason",
+                                        "label": "Adjustment Reason Code"
+                                    },
+                                    {
+                                        "field": "externalComment",
+                                        "label": "Adjustment Reason Description"
+                                    },
+                                    {
+                                        "field": "createdBy",
+                                        "label": "Entered By"
+                                    },
+                                    {
+                                        "field": "redLineTotalChange",
+                                        "label": "Adjustment Amount"
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "label": "Adjustment Date"
+                                    },
+                                    {
+                                        "field": "status",
+                                        "label": "Adjustment Status"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": "SummaryLineItemChanges",
+                    "actions": [
+                        {
+                            "visible": {
+                                "method": "isAdjustmentLineItemAccepted",
+                                "service": "spendManagementService"
+                            },
+                            "onlineOnly": true,
+                            "label": "Reject Adjustment",
+                            "type": "custom",
+                            "click": {
+                                "method": "rejectAdjustment",
+                                "service": "spendManagementService"
+                            },
+                            "command": "RejectChangesetCommand",
+                            "pendingClassImageUrl": "img/ajax-loader.gif",
+                            "imageUrl": "img/error.png",
+                            "name": "approve-reject",
+                            "defaultClass": "reject-error",
+                            "options": { "itemPage": { "edit": "summaryLineItemAdjustReject" } },
+                            "isComponent": true
+                        }
+                    ],
+                    "listPage": "Summary Line Item Changes - OC Spend Management"
+                }
+            },
+            "itemPages": {
+                "invoiceApprove": {
+                    "mode": null,
+                    "parentFieldName": null,
+                    "hiddenFields": null,
+                    "dottedView": null,
+                    "useJsonApi": null,
+                    "liveUpdate": null,
+                    "screenDisplayName": "Approve Invoice",
+                    "fields": [
+                        {
+                            "conditional": false,
+                            "displayName": "Internal Comment",
+                            "columnID": [ 5154 ],
+                            "relatedEntity": null,
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "String",
+                            "required": false,
+                            "size": 255,
+                            "controlType": "Multi Line Text",
+                            "readonly": false,
+                            "name": "internalComment",
+                            "id": 698,
+                            "attribute": "Action Comment"
+                        },
+                        {
+                            "conditional": false,
+                            "displayName": "External Comment",
+                            "columnID": [ 1870 ],
+                            "relatedEntity": null,
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "String",
+                            "required": false,
+                            "size": 2000,
+                            "controlType": "Multi Line Text",
+                            "readonly": false,
+                            "name": "externalComment",
+                            "id": 699,
+                            "attribute": "External Comment"
+                        }
+                    ],
+                    "pageName": "Invoice Header Item For Approve",
+                    "entity": "InvoiceHeader",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": null
+                },
+                "trackChangesNetAmount-DetailLineItem": {
+                    "mode": null,
+                    "parentFieldName": null,
+                    "hiddenFields": null,
+                    "dottedView": null,
+                    "useJsonApi": null,
+                    "liveUpdate": null,
+                    "screenDisplayName": "Adjust Line Item",
+                    "fields": [
+                        {
+                            "conditional": false,
+                            "displayName": "Red Line Total",
+                            "columnID": [ 1417 ],
+                            "relatedEntity": null,
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "Money",
+                            "required": false,
+                            "size": 16,
+                            "controlType": "Track Changes Expanded",
+                            "readonly": false,
+                            "name": "netAmount",
+                            "id": 6757,
+                            "attribute": "Red Line Total"
+                        }
+                    ],
+                    "pageName": "Detail Line Item NetAmount Change - OC Spend Management",
+                    "entity": "DetailLineItem",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": null
+                },
+                "trackChangesNetAmount-RejectLineItem": {
+                    "mode": null,
+                    "parentFieldName": null,
+                    "hiddenFields": null,
+                    "dottedView": null,
+                    "useJsonApi": null,
+                    "liveUpdate": null,
+                    "screenDisplayName": "Reject Line Item",
+                    "fields": [
+                        {
+                            "conditional": false,
+                            "displayName": "Red Line Total",
+                            "columnID": [ 1417 ],
+                            "relatedEntity": null,
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "Money",
+                            "required": false,
+                            "size": 16,
+                            "controlType": "Track Changes Expanded",
+                            "readonly": false,
+                            "name": "netAmount",
+                            "id": 6757,
+                            "attribute": "Red Line Total"
+                        }
+                    ],
+                    "pageName": "Detail Line Item NetAmount Change - OC Spend Management",
+                    "entity": "DetailLineItem",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": null
+                },
+                "trackChangesNetAmount-SummaryLineItem": {
+                    "mode": null,
+                    "parentFieldName": null,
+                    "hiddenFields": null,
+                    "dottedView": null,
+                    "useJsonApi": null,
+                    "liveUpdate": null,
+                    "screenDisplayName": "Adjust Line Item",
+                    "fields": [
+                        {
+                            "conditional": false,
+                            "displayName": "Red Line Total",
+                            "columnID": [ 3049 ],
+                            "relatedEntity": null,
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "Money",
+                            "required": false,
+                            "size": 16,
+                            "controlType": "Track Changes Expanded",
+                            "readonly": false,
+                            "name": "netAmount",
+                            "id": 6761,
+                            "attribute": "Red Line Total"
+                        }
+                    ],
+                    "pageName": "Summary LineItem NetAmount Change - OC Spend Management",
+                    "entity": "SummaryLineItem",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": null
+                },
+                "invoiceDocumentsUpload": {
+                    "mode": "edit",
+                    "parentFieldName": "documents",
+                    "hiddenFields": [ "matter", "documentFile" ],
+                    "dottedView": null,
+                    "useJsonApi": "true",
+                    "liveUpdate": null,
+                    "screenDisplayName": "Check in",
+                    "pageName": "Upload Invoice Matter Management Document - OC Spend Management",
+                    "entity": "InvoiceMatterManagementDocument",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": null
+                },
+                "documentsUploadCmis": null,
+                "invoiceReject": {
+                    "parentFieldName": null,
+                    "liveUpdate": null,
+                    "screenDisplayName": "Reject Invoice",
+                    "pageName": "Invoice Header Item For Reject - OC Spend Management",
+                    "showReadonlyInEditMode": null,
+                    "mode": null,
+                    "hiddenFields": null,
+                    "operations": [
+                        {
+                            "displayName": "Reject",
+                            "operationName": "save",
+                            "command": "OCInvoiceStepRejectCommand"
+                        },
+                        {
+                            "displayName": "Cancel",
+                            "operationName": "cancel",
+                            "command": "Cancel"
+                        }
+                    ],
+                    "dottedView": null,
+                    "useJsonApi": null,
+                    "fields": [
+                        {
+                            "conditional": false,
+                            "displayName": "Reject Reason Codes",
+                            "columnID": [ 3680 ],
+                            "relatedEntity": "InvoiceRejectReasonCode",
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "MultiAssociation",
+                            "required": true,
+                            "size": 16,
+                            "controlType": "Multi-Select List",
+                            "readonly": false,
+                            "sourceListScreen": "Invoice Reject Reason Codes Non System",
+                            "name": "reasonTypes",
+                            "id": 6758,
+                            "attribute": "Reject Reason Codes"
+                        },
+                        {
+                            "conditional": false,
+                            "displayName": "Internal Comment",
+                            "columnID": [ 5154 ],
+                            "relatedEntity": null,
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "String",
+                            "required": false,
+                            "size": 255,
+                            "controlType": "Multi Line Text",
+                            "readonly": false,
+                            "name": "internalComment",
+                            "id": 6759,
+                            "attribute": "Action Comment"
+                        },
+                        {
+                            "conditional": false,
+                            "displayName": "External Comment",
+                            "columnID": [ 1870 ],
+                            "relatedEntity": null,
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "String",
+                            "required": false,
+                            "size": 2000,
+                            "controlType": "Multi Line Text",
+                            "readonly": false,
+                            "name": "externalComment",
+                            "id": 6760,
+                            "attribute": "External Comment"
+                        }
+                    ],
+                    "entity": "InvoiceHeader",
+                    "conditionalFields": null
+                },
+                "documentsAddcmis": null,
+                "detailLineItemAdjustReject": {
+                    "mode": "edit",
+                    "parentFieldName": null,
+                    "hiddenFields": null,
+                    "dottedView": null,
+                    "useJsonApi": null,
+                    "liveUpdate": null,
+                    "screenDisplayName": "Reject Adjustment",
+                    "fields": [
+                        {
+                            "conditional": false,
+                            "displayName": "Rejected Reason",
+                            "columnID": [ 3276 ],
+                            "relatedEntity": null,
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "String",
+                            "required": true,
+                            "size": 255,
+                            "controlType": "Single Line Text",
+                            "readonly": false,
+                            "name": "rejectedReason",
+                            "id": 336,
+                            "attribute": "Rejected Reason"
+                        }
+                    ],
+                    "pageName": "Detail Line Item Changes - Reject Screen",
+                    "entity": "DetailLineItemChanges",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": null
+                },
+                "trackChangesNetAmount-AdjustmentHeaderItem": {
+                    "mode": null,
+                    "parentFieldName": null,
+                    "hiddenFields": null,
+                    "dottedView": null,
+                    "useJsonApi": null,
+                    "liveUpdate": null,
+                    "screenDisplayName": "Adjust Header Item",
+                    "fields": [
+                        {
+                            "conditional": false,
+                            "displayName": "Red Line Total",
+                            "columnID": [ 1237 ],
+                            "relatedEntity": null,
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "Money",
+                            "required": false,
+                            "size": 16,
+                            "controlType": "Track Changes Expanded",
+                            "readonly": false,
+                            "name": "redLineTotal",
+                            "id": 6756,
+                            "attribute": "Red Line Total"
+                        }
+                    ],
+                    "pageName": "Adjustment Line Item NetAmount Change - OC Spend Management",
+                    "entity": "AdjustmentLineItem",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": null
+                },
+                "invoiceDocumentsAdd": {
+                    "mode": "add",
+                    "parentFieldName": "documents",
+                    "hiddenFields": [ "matter", "documentFile" ],
+                    "dottedView": null,
+                    "useJsonApi": "true",
+                    "liveUpdate": null,
+                    "screenDisplayName": "Add Document",
+                    "pageName": "Add Invoice Matter Management Document - OC Spend Management",
+                    "entity": "InvoiceMatterManagementDocument",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": null
+                },
+                "summaryLineItemAdjustReject": {
+                    "mode": "edit",
+                    "parentFieldName": null,
+                    "hiddenFields": null,
+                    "dottedView": null,
+                    "useJsonApi": null,
+                    "liveUpdate": null,
+                    "screenDisplayName": "Reject Adjustment",
+                    "fields": [
+                        {
+                            "conditional": false,
+                            "displayName": "Rejected Reason",
+                            "columnID": [ 3312 ],
+                            "relatedEntity": null,
+                            "liveUpdate": false,
+                            "sectionGroup": null,
+                            "type": "String",
+                            "required": true,
+                            "size": 255,
+                            "controlType": "Single Line Text",
+                            "readonly": false,
+                            "name": "rejectedReason",
+                            "id": 2371,
+                            "attribute": "Rejected Reason"
+                        }
+                    ],
+                    "pageName": "Summary Line Item Changes - Reject Screen",
+                    "entity": "SummaryLineItemChanges",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": null
+                }
+            },
+            "imageUrl": "img/coins.svg",
+            "online": {
+                "method": "isConnected",
+                "service": "connectionService"
+            },
+            "page": {
+                "offline": "invoicesList",
+                "online": "invoicesList"
+            },
+            "state": {
+                "offline": "spend.invoiceslist",
+                "appName": "spend",
+                "online": "spend.invoiceslist"
+            },
+            "trackChanges": {
+                "operations": [
+                    {
+                        "Value": "Set to amount",
+                        "Id": 1
+                    },
+                    {
+                        "Value": "Increase by percentage",
+                        "Id": 2
+                    },
+                    {
+                        "Value": "Increase by amount",
+                        "Id": 3
+                    },
+                    {
+                        "Value": "Decrease by percentage",
+                        "Id": 4
+                    },
+                    {
+                        "Value": "Decrease by amount",
+                        "Id": 5
+                    }
+                ],
+                "reasons": [
+                    {
+                        "Value": "Incorrect Copy Charges",
+                        "Id": "Incorrect Copy Charges"
+                    },
+                    {
+                        "Value": "Insufficient Description",
+                        "Id": "Insufficient Description"
+                    },
+                    {
+                        "Value": "Other",
+                        "Id": "Other"
+                    },
+                    {
+                        "Value": "Billing for Indexing",
+                        "Id": "Billing for Indexing"
+                    },
+                    {
+                        "Value": "Billing for Multiple Activities on the Same Line",
+                        "Id": "Billing for Multiple Activities on the Same Line"
+                    },
+                    {
+                        "Value": "Billing for Online Research",
+                        "Id": "Billing for Online Research"
+                    },
+                    {
+                        "Value": "Billing in Excess of Agreed Upon Rate",
+                        "Id": "Billing in Excess of Agreed Upon Rate"
+                    },
+                    {
+                        "Value": "Multiple timekeepers Billing to the Same Activity",
+                        "Id": "Multiple timekeepers Billing to the Same Activity"
+                    },
+                    {
+                        "Value": "Unapproved Activity",
+                        "Id": "Unapproved Activity"
+                    },
+                    {
+                        "Value": "Unapproved Expenses",
+                        "Id": "Unapproved Expenses"
+                    }
+                ]
+            },
+            "order": 2
+        },
+        "name": "outlook",
+        "userDefinedFields": {
+            "matterInfo": [
+                {
+                    "showcolumn": true,
+                    "name": "Filed to Passport",
+                    "type": "YesNo",
+                    "searchIndicator": true,
+                    "value": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "name",
+                    "name": "Passport Matter Name",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "matterNumber",
+                    "name": "Passport Matter Number",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "_id",
+                    "name": "Passport Matter ID",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "parentDocument",
+                    "name": "Passport Folder ID",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "parentInfo",
+                    "name": "Passport Parent Info",
+                    "type": "text",
+                    "multivalue": true
+                }
+            ],
+            "draftInternal": [
+                {
+                    "showcolumn": false,
+                    "isguid": true,
+                    "propertyname": "OCDeferredTransactionId",
+                    "name": "OCDeferredTransactionId",
+                    "type": "text",
+                    "multivalue": false
+                }
+            ]
+        }
+    }
+}

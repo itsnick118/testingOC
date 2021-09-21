@@ -1,0 +1,1026 @@
+{
+    "application": {
+        "name": "outlook",
+        "globalDocuments": {
+            "pages": {
+                "globalDocumentsList": {
+                    "parentFieldName": "documents",
+                    "listOptions": {
+                        "regionToFieldMappings": {
+                            "secondary": "documentRelatedObject",
+                            "meta3": "updatedAt",
+                            "meta2": "formattedFileSize",
+                            "meta1": "status",
+                            "displayRegions": [ "primary", "secondary", "tertiary", "meta1", "meta2", "meta3" ],
+                            "tertiary": "lastModifiedByFullName",
+                            "primary": "name"
+                        },
+                        "hasSecondaryActions": false
+                    },
+                    "useJsonApi": "true",
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "documentSize" ],
+                                "name": "formattedFileSize",
+                                "value": {
+                                    "method": "setFormattedDocumentSize",
+                                    "service": "itemListService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "downloadFile" ],
+                                "value": {
+                                    "method": "setIconForDocument",
+                                    "service": "documentsService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "associatedEntityName", "recordName" ],
+                                "name": "documentRelatedObject",
+                                "value": {
+                                    "method": "combineColumnsWithSeparator",
+                                    "service": "itemListService"
+                                },
+                                "separator": ": "
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "name",
+                                        "width": "18%",
+                                        "label": "Document Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "documentFileName",
+                                        "width": "18%",
+                                        "label": "File Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "associatedEntityName",
+                                        "label": "Related Object"
+                                    },
+                                    {
+                                        "field": "recordName",
+                                        "label": "Object Name"
+                                    },
+                                    {
+                                        "field": "status",
+                                        "label": "Status"
+                                    },
+                                    {
+                                        "field": "createdByFullName",
+                                        "label": "Created By"
+                                    },
+                                    {
+                                        "field": "lastModifiedByFullName",
+                                        "width": "14%",
+                                        "label": "Last Modified By",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "width": "17%",
+                                        "label": "Updated At"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "title": "Documents",
+                    "type": "MatterManagementDocument",
+                    "filterBy": {
+                        "values": [ "No" ],
+                        "column": "isFolder"
+                    },
+                    "actions": [
+                        {
+                            "visible": [
+                                {
+                                    "method": "isNotEmail",
+                                    "service": "documentsService"
+                                }
+                            ],
+                            "onlineOnly": false,
+                            "label": "Navigate",
+                            "click": {
+                                "method": "navigateToDocument",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "Navigate|Global Documents|Document|"
+                            },
+                            "titleClass": "ms-Icon--chevronsRight"
+                        }
+                    ],
+                    "listContentType": "file",
+                    "listPage": "Render MatterManagementDocuments List Screen - OC Document Management",
+                    "defaultFilters": [
+                        {
+                            "path": "isFolder",
+                            "type": "EQUALS",
+                            "value": "No"
+                        }
+                    ]
+                },
+                "globalDocumentsListCmis": {
+                    "parentFieldName": "documents",
+                    "listOptions": {
+                        "regionToFieldMappings": {
+                            "secondary": "documentRelatedObject",
+                            "meta3": "updatedAt",
+                            "meta2": "formattedFileSize",
+                            "meta1": "documentStatus",
+                            "displayRegions": [ "primary", "secondary", "tertiary", "meta1", "meta2", "meta3" ],
+                            "tertiary": "updatedBy",
+                            "primary": "name"
+                        },
+                        "hasSecondaryActions": false
+                    },
+                    "useJsonApi": "true",
+                    "isAvailableForCmis": true,
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "documentSize" ],
+                                "name": "formattedFileSize",
+                                "value": {
+                                    "method": "setFormattedDocumentSize",
+                                    "service": "itemListService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "name" ],
+                                "value": {
+                                    "method": "setIconForDocument",
+                                    "service": "documentsService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "relatedEntityName", "relatedObjectName" ],
+                                "name": "documentRelatedObject",
+                                "value": {
+                                    "method": "combineColumnsWithSeparator",
+                                    "service": "itemListService"
+                                },
+                                "separator": ": "
+                            },
+                            {
+                                "value": {
+                                    "method": "cmisObjectIdCode",
+                                    "service": "documentsService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "name",
+                                        "width": "18%",
+                                        "label": "Document Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "name",
+                                        "width": "18%",
+                                        "label": "File Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "relatedEntityName",
+                                        "label": "Related Object"
+                                    },
+                                    {
+                                        "field": "relatedObjectName",
+                                        "label": "Object Name"
+                                    },
+                                    {
+                                        "field": "documentStatus",
+                                        "label": "Status"
+                                    },
+                                    {
+                                        "field": "createdBy",
+                                        "label": "Created By"
+                                    },
+                                    {
+                                        "field": "updatedBy",
+                                        "width": "14%",
+                                        "label": "Last Modified By",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "width": "17%",
+                                        "label": "Updated At"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "title": "Documents",
+                    "type": "PassportCmisObject",
+                    "actions": [
+                        {
+                            "visible": [
+                                {
+                                    "method": "isNotEmail",
+                                    "service": "documentsService"
+                                }
+                            ],
+                            "onlineOnly": false,
+                            "label": "Navigate",
+                            "click": {
+                                "method": "navigateToDocument",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "Navigate|Global Documents|Document|"
+                            },
+                            "titleClass": "ms-Icon--chevronsRight"
+                        }
+                    ],
+                    "listContentType": "file",
+                    "listPage": "null",
+                    "defaultFilters": [
+                        {
+                            "path": "isFolder",
+                            "type": "EQUALS",
+                            "value": "No"
+                        }
+                    ]
+                },
+                "itemSummary": {
+                    "headerField": "name",
+                    "isAvailableForCmis": true,
+                    "title": "Document Summary",
+                    "listPage": "null"
+                },
+                "recentDocumentsList": {
+                    "parentFieldName": "documents",
+                    "listOptions": {
+                        "regionToFieldMappings": {
+                            "secondary": "documentRelatedObject",
+                            "meta3": "updatedAt",
+                            "meta2": "formattedFileSize",
+                            "meta1": "status",
+                            "displayRegions": [ "primary", "secondary", "tertiary", "meta1", "meta2", "meta3" ],
+                            "tertiary": "lastModifiedByFullName",
+                            "primary": "name"
+                        },
+                        "hasSecondaryActions": false
+                    },
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "documentSize" ],
+                                "name": "formattedFileSize",
+                                "value": {
+                                    "method": "setFormattedDocumentSize",
+                                    "service": "itemListService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "downloadFile" ],
+                                "value": {
+                                    "method": "setIconForDocument",
+                                    "service": "documentsService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "associatedEntityName", "recordName" ],
+                                "name": "documentRelatedObject",
+                                "value": {
+                                    "method": "combineColumnsWithSeparator",
+                                    "service": "itemListService"
+                                },
+                                "separator": ": "
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "name",
+                                        "width": "18%",
+                                        "label": "Document Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "documentFileName",
+                                        "width": "18%",
+                                        "label": "File Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "associatedEntityName",
+                                        "label": "Related Object"
+                                    },
+                                    {
+                                        "field": "recordName",
+                                        "label": "Object Name"
+                                    },
+                                    {
+                                        "field": "status",
+                                        "label": "Status"
+                                    },
+                                    {
+                                        "field": "createdByFullName",
+                                        "label": "Created By"
+                                    },
+                                    {
+                                        "field": "lastModifiedByFullName",
+                                        "width": "14%",
+                                        "label": "Last Modified By",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "width": "17%",
+                                        "label": "Updated At"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "title": "Recent Documents",
+                    "type": "MatterManagementDocument",
+                    "listContentType": "file",
+                    "operations": [
+                        {
+                            "operationOrder": 1,
+                            "usageEvent": null,
+                            "displayName": "Downloaddoctest",
+                            "defaultClass": "ms-Icon--download",
+                            "tooltip": "downloaddoc",
+                            "operationType": "CustomOCOperation",
+                            "placeholder": "RowLevelAction",
+                            "componentName": null,
+                            "serviceMethodName": "matterManagementDocumentService.saveGlobalDocumentAs",
+                            "customAttributes": null
+                        }
+                    ],
+                    "useJsonApi": "true",
+                    "sortBy": "updatedAt,DESCENDING",
+                    "actions": [
+                        {
+                            "visible": [
+                                {
+                                    "method": "isNotEmail",
+                                    "service": "documentsService"
+                                }
+                            ],
+                            "onlineOnly": false,
+                            "label": "Navigate",
+                            "click": {
+                                "method": "navigateToDocument",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "Navigate|Global Documents|Document|"
+                            },
+                            "titleClass": "ms-Icon--chevronsRight"
+                        }
+                    ],
+                    "listPage": "Render MatterManagementDocuments List Screen - OC Document Management",
+                    "defaultFilters": [
+                        {
+                            "path": "associatedEntityName",
+                            "type": "NOT_EQUALS",
+                            "value": "EmailDocument"
+                        },
+                        {
+                            "path": "lastModifiedBy",
+                            "includeCurrentUserName": true,
+                            "type": "EQUALS",
+                            "value": ""
+                        },
+                        {
+                            "path": "isFolder",
+                            "type": "EQUALS",
+                            "value": "No"
+                        }
+                    ]
+                },
+                "checkedOutDocumentsListCmis": {
+                    "parentFieldName": "documents",
+                    "listOptions": {
+                        "regionToFieldMappings": {
+                            "secondary": "documentRelatedObject",
+                            "meta3": "updatedAt",
+                            "meta2": "formattedFileSize",
+                            "meta1": "documentStatus",
+                            "displayRegions": [ "primary", "secondary", "tertiary", "meta1", "meta2", "meta3" ],
+                            "tertiary": "updatedBy",
+                            "primary": "name"
+                        },
+                        "hasSecondaryActions": false
+                    },
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "documentSize" ],
+                                "name": "formattedFileSize",
+                                "value": {
+                                    "method": "setFormattedDocumentSize",
+                                    "service": "itemListService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "name" ],
+                                "value": {
+                                    "method": "setIconForDocument",
+                                    "service": "documentsService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "relatedEntityName", "relatedObjectName" ],
+                                "name": "documentRelatedObject",
+                                "value": {
+                                    "method": "combineColumnsWithSeparator",
+                                    "service": "itemListService"
+                                },
+                                "separator": ": "
+                            },
+                            {
+                                "value": {
+                                    "method": "cmisObjectIdCode",
+                                    "service": "documentsService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "name",
+                                        "width": "18%",
+                                        "label": "Document Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "name",
+                                        "width": "18%",
+                                        "label": "File Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "relatedEntityName",
+                                        "label": "Related Object"
+                                    },
+                                    {
+                                        "field": "relatedObjectName",
+                                        "label": "Object Name"
+                                    },
+                                    {
+                                        "field": "documentStatus",
+                                        "label": "Status"
+                                    },
+                                    {
+                                        "field": "createdBy",
+                                        "label": "Created By"
+                                    },
+                                    {
+                                        "field": "updatedBy",
+                                        "width": "14%",
+                                        "label": "Last Modified By",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "width": "17%",
+                                        "label": "Updated At"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "title": "Checked Out Documents",
+                    "type": "PassportCmisObject",
+                    "listContentType": "file",
+                    "useJsonApi": "true",
+                    "isAvailableForCmis": true,
+                    "sortBy": "updatedAt,DESCENDING",
+                    "actions": [
+                        {
+                            "visible": [
+                                {
+                                    "method": "isNotEmail",
+                                    "service": "documentsService"
+                                }
+                            ],
+                            "onlineOnly": false,
+                            "label": "Navigate",
+                            "click": {
+                                "method": "navigateToDocument",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "Navigate|Global Documents|Document|"
+                            },
+                            "titleClass": "ms-Icon--chevronsRight"
+                        }
+                    ],
+                    "listPage": "null",
+                    "defaultFilters": [
+                        {
+                            "path": "isEmailMessage",
+                            "type": "EQUALS",
+                            "value": "No"
+                        },
+                        {
+                            "path": "checkedOutByUsername",
+                            "includeCurrentUserName": true,
+                            "type": "EQUALS",
+                            "value": ""
+                        },
+                        {
+                            "path": "isFolder",
+                            "type": "EQUALS",
+                            "value": "No"
+                        }
+                    ]
+                },
+                "history": {
+                    "listOptions": {
+                        "displayRegions": [ "primary", "secondary", "tertiary", "actions", "meta3" ],
+                        "regionToFieldMappings": {
+                            "secondary": "senderName",
+                            "meta2": "statusLabel",
+                            "tertiary": "additionalInfo",
+                            "primary": "displayName"
+                        }
+                    },
+                    "navigate": "history",
+                    "loader": "loadHistory",
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "displayName",
+                                        "width": "50%",
+                                        "label": "Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "senderName",
+                                        "label": "Sender"
+                                    },
+                                    {
+                                        "field": "date",
+                                        "label": "Upload Date"
+                                    },
+                                    {
+                                        "field": "additionalInfo",
+                                        "width": "50%",
+                                        "label": "Matter",
+                                        "wrapText": true
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "title": "History",
+                    "actions": [
+                        {
+                            "name": "Upload-status",
+                            "defaultClass": {
+                                "canceled": "ms-Icon--infoCircle ms-fontColor-yellow",
+                                "success": "ms-Icon--check ms-fontColor-green",
+                                "automatic": "file-type-icon ms-fontSize-m ms-Icon-md12--AutoEnhanceOff ms-fontColor-green",
+                                "error": "ms-Icon--x ms-fontColor-red"
+                            },
+                            "onlineOnly": false,
+                            "label": {
+                                "canceled": "Cancelled",
+                                "success": "Uploaded",
+                                "automatic": "Uploaded automatically",
+                                "error": "Error: `{errorMessage}`"
+                            }
+                        }
+                    ],
+                    "listPage": "null"
+                },
+                "checkedOutDocumentsList": {
+                    "parentFieldName": "documents",
+                    "listOptions": {
+                        "regionToFieldMappings": {
+                            "secondary": "documentRelatedObject",
+                            "meta3": "updatedAt",
+                            "meta2": "formattedFileSize",
+                            "meta1": "status",
+                            "displayRegions": [ "primary", "secondary", "tertiary", "meta1", "meta2", "meta3" ],
+                            "tertiary": "lastModifiedByFullName",
+                            "primary": "name"
+                        },
+                        "hasSecondaryActions": false
+                    },
+                    "useJsonApi": "true",
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "documentSize" ],
+                                "name": "formattedFileSize",
+                                "value": {
+                                    "method": "setFormattedDocumentSize",
+                                    "service": "itemListService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "downloadFile" ],
+                                "value": {
+                                    "method": "setIconForDocument",
+                                    "service": "documentsService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "associatedEntityName", "recordName" ],
+                                "name": "documentRelatedObject",
+                                "value": {
+                                    "method": "combineColumnsWithSeparator",
+                                    "service": "itemListService"
+                                },
+                                "separator": ": "
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "name",
+                                        "width": "18%",
+                                        "label": "Document Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "documentFileName",
+                                        "width": "18%",
+                                        "label": "File Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "associatedEntityName",
+                                        "label": "Related Object"
+                                    },
+                                    {
+                                        "field": "recordName",
+                                        "label": "Object Name"
+                                    },
+                                    {
+                                        "field": "status",
+                                        "label": "Status"
+                                    },
+                                    {
+                                        "field": "createdByFullName",
+                                        "label": "Created By"
+                                    },
+                                    {
+                                        "field": "lastModifiedByFullName",
+                                        "width": "14%",
+                                        "label": "Last Modified By",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "width": "17%",
+                                        "label": "Updated At"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortBy": "updatedAt,DESCENDING",
+                    "title": "Checked Out Documents",
+                    "type": "MatterManagementDocument",
+                    "actions": [
+                        {
+                            "visible": [
+                                {
+                                    "method": "isNotEmail",
+                                    "service": "documentsService"
+                                }
+                            ],
+                            "onlineOnly": false,
+                            "label": "Navigate",
+                            "click": {
+                                "method": "navigateToDocument",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "Navigate|Global Documents|Document|"
+                            },
+                            "titleClass": "ms-Icon--chevronsRight"
+                        }
+                    ],
+                    "listContentType": "file",
+                    "listPage": "Render MatterManagementDocuments List Screen - OC Document Management",
+                    "defaultFilters": [
+                        {
+                            "path": "associatedEntityName",
+                            "type": "NOT_EQUALS",
+                            "value": "EmailDocument"
+                        },
+                        {
+                            "path": "lockedBy",
+                            "includeCurrentUserName": true,
+                            "type": "EQUALS",
+                            "value": ""
+                        },
+                        {
+                            "path": "isFolder",
+                            "type": "EQUALS",
+                            "value": "No"
+                        }
+                    ]
+                },
+                "recentDocumentsListCmis": {
+                    "parentFieldName": "documents",
+                    "listOptions": {
+                        "regionToFieldMappings": {
+                            "secondary": "documentRelatedObject",
+                            "meta3": "updatedAt",
+                            "meta2": "formattedFileSize",
+                            "meta1": "documentStatus",
+                            "displayRegions": [ "primary", "secondary", "tertiary", "meta1", "meta2", "meta3" ],
+                            "tertiary": "updatedBy",
+                            "primary": "name"
+                        },
+                        "hasSecondaryActions": false
+                    },
+                    "calculatedColumns": {
+                        "columns": [
+                            {
+                                "inputFields": [ "documentSize" ],
+                                "name": "formattedFileSize",
+                                "value": {
+                                    "method": "setFormattedDocumentSize",
+                                    "service": "itemListService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "name" ],
+                                "value": {
+                                    "method": "setIconForDocument",
+                                    "service": "documentsService"
+                                }
+                            },
+                            {
+                                "inputFields": [ "relatedEntityName", "relatedObjectName" ],
+                                "name": "documentRelatedObject",
+                                "value": {
+                                    "method": "combineColumnsWithSeparator",
+                                    "service": "itemListService"
+                                },
+                                "separator": ": "
+                            },
+                            {
+                                "value": {
+                                    "method": "cmisObjectIdCode",
+                                    "service": "documentsService"
+                                }
+                            }
+                        ]
+                    },
+                    "tableOptions": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "field": "name",
+                                        "width": "18%",
+                                        "label": "Document Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "name",
+                                        "width": "18%",
+                                        "label": "File Name",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "relatedEntityName",
+                                        "label": "Related Object"
+                                    },
+                                    {
+                                        "field": "relatedObjectName",
+                                        "label": "Object Name"
+                                    },
+                                    {
+                                        "field": "documentStatus",
+                                        "label": "Status"
+                                    },
+                                    {
+                                        "field": "createdBy",
+                                        "label": "Created By"
+                                    },
+                                    {
+                                        "field": "updatedBy",
+                                        "width": "14%",
+                                        "label": "Last Modified By",
+                                        "wrapText": true
+                                    },
+                                    {
+                                        "field": "updatedAt",
+                                        "width": "17%",
+                                        "label": "Updated At"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "title": "Recent Documents",
+                    "type": "PassportCmisObject",
+                    "listContentType": "file",
+                    "useJsonApi": "true",
+                    "isAvailableForCmis": true,
+                    "sortBy": "updatedAt,DESCENDING",
+                    "actions": [
+                        {
+                            "visible": [
+                                {
+                                    "method": "isNotEmail",
+                                    "service": "documentsService"
+                                }
+                            ],
+                            "onlineOnly": false,
+                            "label": "Navigate",
+                            "click": {
+                                "method": "navigateToDocument",
+                                "service": "matterManagementDocumentService",
+                                "usageEvent": "Navigate|Global Documents|Document|"
+                            },
+                            "titleClass": "ms-Icon--chevronsRight"
+                        }
+                    ],
+                    "listPage": "null",
+                    "defaultFilters": [
+                        {
+                            "path": "isEmailMessage",
+                            "type": "EQUALS",
+                            "value": "No"
+                        },
+                        {
+                            "path": "updatedBy",
+                            "includeCurrentUserName": true,
+                            "type": "EQUALS",
+                            "value": ""
+                        },
+                        {
+                            "path": "isFolder",
+                            "type": "EQUALS",
+                            "value": "No"
+                        }
+                    ]
+                }
+            },
+            "itemPages": {
+                "summaryMatterDocument": {
+                    "mode": "view",
+                    "parentFieldName": "documents",
+                    "hiddenFields": [],
+                    "dottedView": false,
+                    "useJsonApi": "true",
+                    "liveUpdate": null,
+                    "screenDisplayName": "View Document Summary",
+                    "pageName": "View Matter Matter Management Document - OC Matter Management",
+                    "entity": "MatterMatterManagementDocument",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": "true"
+                },
+                "summaryInvoiceDocument": {
+                    "mode": "view",
+                    "parentFieldName": "documents",
+                    "hiddenFields": [],
+                    "dottedView": false,
+                    "useJsonApi": "true",
+                    "liveUpdate": null,
+                    "screenDisplayName": "View Document Summary",
+                    "pageName": "View Invoice Matter Management Document - OC Matter Management",
+                    "entity": "InvoiceMatterManagementDocument",
+                    "conditionalFields": null,
+                    "showReadonlyInEditMode": "true"
+                },
+                "summaryPassportCmisObject": null
+            },
+            "tabs": [
+                {
+                    "visible": {
+                        "method": "isConnected",
+                        "service": "connectionService"
+                    },
+                    "stateName": "globalDocuments.globalDocumentsList",
+                    "label": "All Documents",
+                    "page": "globalDocumentsList",
+                    "titleClass": "ms-Icon--documents"
+                },
+                {
+                    "visible": {
+                        "method": "isConnected",
+                        "service": "connectionService"
+                    },
+                    "stateName": "globalDocuments.checkedOutDocumentsList",
+                    "label": "Checked Out",
+                    "page": "checkedOutDocumentsList",
+                    "titleClass": "ms-Icon--documentForward"
+                },
+                {
+                    "visible": {
+                        "method": "isConnected",
+                        "service": "connectionService"
+                    },
+                    "stateName": "globalDocuments.recentDocumentsList",
+                    "label": "Recent Documents",
+                    "page": "recentDocumentsList",
+                    "titleClass": "ms-Icon--clock"
+                }
+            ],
+            "page": {
+                "offline": "globalDocumentsList",
+                "online": "globalDocumentsList"
+            },
+            "state": {
+                "offline": "globalDocuments.globalDocumentsList",
+                "appName": "globalDocuments",
+                "online": "globalDocuments.globalDocumentsList"
+            },
+            "services": [
+                {
+                    "serviceLocation": "js/services/spendManagement.service.js",
+                    "serviceName": "spendManagementService"
+                },
+                {
+                    "serviceLocation": "js/services/matterManagement.service.js",
+                    "serviceName": "matterManagementService"
+                },
+                {
+                    "serviceLocation": "js/services/matterManagementDocument.service.js",
+                    "serviceName": "matterManagementDocumentService"
+                }
+            ],
+            "title": "Documents",
+            "titleClass": "ms-Icon--documents",
+            "order": 3
+        },
+        "userDefinedFields": {
+            "matterInfo": [
+                {
+                    "showcolumn": true,
+                    "name": "Filed to Passport",
+                    "type": "YesNo",
+                    "searchIndicator": true,
+                    "value": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "name",
+                    "name": "Passport Matter Name",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "matterNumber",
+                    "name": "Passport Matter Number",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "_id",
+                    "name": "Passport Matter ID",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "parentDocument",
+                    "name": "Passport Folder ID",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "parentInfo",
+                    "name": "Passport Parent Info",
+                    "type": "text",
+                    "multivalue": true
+                }
+            ],
+            "draftInternal": [
+                {
+                    "showcolumn": false,
+                    "isguid": true,
+                    "propertyname": "OCDeferredTransactionId",
+                    "name": "OCDeferredTransactionId",
+                    "type": "text",
+                    "multivalue": false
+                }
+            ]
+        }
+    }
+}

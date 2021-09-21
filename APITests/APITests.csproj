@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35E0ABC3-6ED9-466B-B7CF-14AFD3C878BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>APITests</RootNamespace>
+    <AssemblyName>APITests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PassportClient.cs" />
+    <Compile Include="Environment.cs" />
+    <Compile Include="EnvironmentConfiguration.cs" />
+    <Compile Include="PassportScreen.cs" />
+    <Compile Include="Passport\EndPoints.cs" />
+    <Compile Include="Passport\Json\Configuration\AppModuleQuery.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\AddinLocation.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\AppModuleManifest.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\AutoUpdate.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\AvailableAppDefinition.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\AvailableApps.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Feedback.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Pane.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\RootManifest.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\UserPreferences.cs" />
+    <Compile Include="Passport\Json\Configuration\OutlookMatterManifestTests.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Action.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\ActionBarSettings.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Application.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\CalculatedColumn.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\CalculatedColumns.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Column.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\CommandArgs.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\ConnectionStateAssignment.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Constructor.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\ConstructorOptions.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\DialogOptions.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Field.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\FilterDefinition.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\FlagOptions.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\ItemPageOptions.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\ListOptions.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\LiveUpdateDefinition.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\MenuActionItem.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\ModuleDefinition.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\ModulePage.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Options.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Page.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\PanelOptions.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\RegionToFieldMappings.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Row.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\SavedSearchFormConfig.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\SearchListPage.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Service.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\ServiceMethod.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\StatusMappedProperty.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\Tab.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\TableOptions.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\UserDefinedField.cs" />
+    <Compile Include="Passport\Json\Configuration\Model\UserDefinedFields.cs" />
+    <Compile Include="Passport\Json\Configuration\RootManifestQuery.cs" />
+    <Compile Include="Passport\Json\Configuration\RootManifestTests.cs" />
+    <Compile Include="Passport\OcModule.cs" />
+    <Compile Include="Passport\OfficeApp.cs" />
+    <Compile Include="Passport\ScreenScraping\DynamicSearchCriterion.cs" />
+    <Compile Include="Passport\ScreenScraping\DynamicSearch.cs" />
+    <Compile Include="IQuery.cs" />
+    <Compile Include="Passport\ScreenScraping\MatterApiTests.cs" />
+    <Compile Include="Passport\ScreenScraping\MatterListFilterTests.cs" />
+    <Compile Include="Passport\ScreenScraping\ScreenQuery.cs" />
+    <Compile Include="Passport\ScreenScraping\SearchAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit">
+      <Version>3.10.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

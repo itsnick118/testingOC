@@ -1,0 +1,10 @@
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-UA-Compatible: IE=10
+X-FRAME-OPTIONS: SAMEORIGIN
+Pragma: no-cache
+metadata: {"searchInput.pageInfo.totalPages":"0","cssClasses":"mode-edit screen list","screen-name":"My Invoices - OC Spend Management","isCalendarView":"false","column-data":"id:10527|id:10528|id:10529|id:10530|id:10531|id:10532|id:10533|id:10534|id:10535|id:10536|id:10537|id:10538|id:10539|id:10540|id:10541|id:10542|id:10543|id:10544|id:10545|id:10546|id:10547|id:10548|id:10549|id:10550|id:10551|id:10552|id:10553|id:10554|id:10555|id:10556","sort-data":"approvalInstance.currentStep.startDate,ASCENDING","searchInput.pageInfo.currentPageSize":"25","searchInput.pageInfo.currentPageNumber":"1","id":"1911","searchInput.pageInfo.totalRecords":"0","documentTitle":"My Invoices - OC Spend Management","entity":"179"}
+Vary: Accept-Encoding
+Cache-Control: no-cache
+Date: Fri, 09 Aug 2019 13:24:11 GMT
+Server: None

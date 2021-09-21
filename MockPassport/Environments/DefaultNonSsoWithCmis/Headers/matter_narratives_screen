@@ -1,0 +1,10 @@
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-UA-Compatible: IE=10
+X-FRAME-OPTIONS: SAMEORIGIN
+Pragma: no-cache
+metadata: {"parentFieldName":"matterNarratives","cssClasses":"mode-edit screen list","screen-name":"Narratives List - OC Matter Management","searchInput.pageInfo.currentPageNumber":"1","searchInput.pageInfo.totalRecords":"0","parentEntityId":"193","parentInstanceId":"17","searchInput.pageInfo.totalPages":"0","isCalendarView":"false","column-data":"id:10282|id:10283|id:10285|id:10286|id:10287|id:10288|id:11431|id:11097","sort-data":"narrativeDate,DESCENDING","searchInput.pageInfo.currentPageSize":"25","id":"1881","documentTitle":"Narratives List - OC Matter Management","entity":"207"}
+Vary: Accept-Encoding
+Cache-Control: no-cache
+Date: Fri, 09 Aug 2019 13:24:14 GMT
+Server: None

@@ -1,0 +1,417 @@
+<table class="table"><thead><tr><th colspan="2" class="select"></th><th class="type-String sortable sort-ascending" data-direction="ASCENDING" data-path="name">
+										Name
+									</th><th class="type-String sortable" data-direction="" data-path="matterNumber">
+										Number
+									</th><th class="type-String sortable" data-direction="" data-path="primaryInternalPerson.fullName">
+										PIC
+									</th><th class="type-Date sortable" data-direction="" data-path="openDate">
+										Open Date
+									</th><th class="type-SingleAssociation sortable" data-direction="" data-path="matterStatus">
+										Status
+									</th><th class="type-Date sortable" data-direction="" data-path="closeDate">
+										Close Date
+									</th><th class="type-Money sortable" data-direction="" data-path="spendToDate.amount">
+										Spend to Date
+									</th><th class="type-String sortable" data-direction="" data-path="matterStatus.code">
+										Code
+									</th></tr></thead><tbody><tr data-id="200"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!advice
+			</td><td class="type-String ">
+				USA-2019-AAP-00002
+			</td><td class="type-String ">
+				LA LA
+			</td><td class="type-Date ">
+				07/06/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				0.00 USD
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="199"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!Alloc
+			</td><td class="type-String ">
+				USA-2019-GCO-00006
+			</td><td class="type-String ">
+				LF LF
+			</td><td class="type-Date ">
+				07/06/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="78"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!ELMQA_Dry Run_001 - RENAME
+			</td><td class="type-String ">
+				GLB-2019-GCO-00008
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/01/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="202"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!global-rename N&uuml;rburg
+			</td><td class="type-String ">
+				GLB-2019-GCO-00011
+			</td><td class="type-String ">
+				Avin   Vijay
+			</td><td class="type-Date ">
+				07/06/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				0.00 USD
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10282"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 1
+			</td><td class="type-String ">
+				GLB-2019-GCO-00021
+			</td><td class="type-String ">
+				David Weintraub
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10288"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 10
+			</td><td class="type-String ">
+				BEL-2019-TRN-00001
+			</td><td class="type-String ">
+				Libiya   P
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10307"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 100
+			</td><td class="type-String ">
+				GLB-2019-LIT-00037
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10290"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 11
+			</td><td class="type-String ">
+				GBR-2019-REA-00001
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10283"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 2
+			</td><td class="type-String ">
+				GLB-2019-GCO-00022
+			</td><td class="type-String ">
+				David Weintraub
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10284"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 3
+			</td><td class="type-String ">
+				IRL-2019-LIT-00009
+			</td><td class="type-String ">
+				David Weintraub
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10285"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 4
+			</td><td class="type-String ">
+				GLB-2019-GCO-00023
+			</td><td class="type-String ">
+				David Weintraub
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10286"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 5
+			</td><td class="type-String ">
+				GLB-2019-LIT-00030
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Dormant
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Dormant
+			</td></tr><tr data-id="10310"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 501
+			</td><td class="type-String ">
+				GLB-2019-LIT-00040
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10287"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 6
+			</td><td class="type-String ">
+				GLB-2019-LIT-00032
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10312"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 700
+			</td><td class="type-String ">
+				EAF-2019-REA-00001
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10313"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 701
+			</td><td class="type-String ">
+				EAF-2019-REA-00002
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10321"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 702
+			</td><td class="type-String ">
+				EAF-2019-REA-00003
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10322"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 703
+			</td><td class="type-String ">
+				EAF-2019-REA-00004
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10323"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter 704
+			</td><td class="type-String ">
+				EAF-2019-REA-00005
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10384"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter001
+			</td><td class="type-String ">
+				GLB-2019-GCO-00031
+			</td><td class="type-String ">
+				Libiya   P
+			</td><td class="type-Date ">
+				07/18/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10304"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter51
+			</td><td class="type-String ">
+				DEU-2019-GCO-00009
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10308"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter57
+			</td><td class="type-String ">
+				GLB-2019-LIT-00038
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10305"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter61
+			</td><td class="type-String ">
+				GLB-2019-LIT-00036
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10306"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter62
+			</td><td class="type-String ">
+				CAN-2019-CNT-00001
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr><tr data-id="10324"><script type="text/json">{}</script><td class="select"></td><td class="icons"><i data-tooltip="" class="icon-blank hint"/></td><td class="type-String ">
+				!matter80
+			</td><td class="type-String ">
+				GLB-2019-LIT-00041
+			</td><td class="type-String ">
+				Pamela K Mizuno
+			</td><td class="type-Date ">
+				07/17/2019
+			</td><td class="type-SingleAssociation ">
+				Open
+			</td><td class="type-Date ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				Open
+			</td></tr></tbody></table><a class="list-fetch">Show More Items</a>

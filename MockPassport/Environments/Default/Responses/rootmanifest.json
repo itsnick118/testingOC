@@ -1,0 +1,102 @@
+{
+    "feedback": {
+        "showFeedbackUrl": "feedback.html",
+        "showFeedback": true
+    },
+    "sendLogEmail": "",
+    "usePassportCmisObject": false,
+    "autoUpdate": {
+        "enableAutoUpdate": true,
+        "autoUpdateUrl": "/enduser/office/companion/ocautoupdate.do"
+    },
+    "panes": [
+        {
+            "locations": [ "inspector", "explorer" ],
+            "type": "mail"
+        },
+        {
+            "locations": [ "inspector", "explorer" ],
+            "type": "appointment"
+        }
+    ],
+    "availableApps": {
+        "excel": [
+            {
+                "default": true,
+                "name": "matter",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=excel&module=matter"
+            },
+            {
+                "default": false,
+                "name": "spend",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=excel&module=spend"
+            },
+            {
+                "default": false,
+                "name": "globalDocuments",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=excel&module=globalDocuments"
+            }
+        ],
+        "outlook": [
+            {
+                "default": true,
+                "name": "matter",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=outlook&module=matter"
+            },
+            {
+                "default": false,
+                "name": "spend",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=outlook&module=spend"
+            },
+            {
+                "default": false,
+                "name": "globalDocuments",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=outlook&module=globalDocuments"
+            }
+        ],
+        "word": [
+            {
+                "default": true,
+                "name": "matter",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=word&module=matter"
+            },
+            {
+                "default": false,
+                "name": "spend",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=word&module=spend"
+            },
+            {
+                "default": false,
+                "name": "globalDocuments",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=word&module=globalDocuments"
+            }
+        ],
+        "powerpoint": [
+            {
+                "default": true,
+                "name": "matter",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=powerpoint&module=matter"
+            },
+            {
+                "default": false,
+                "name": "spend",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=powerpoint&module=spend"
+            },
+            {
+                "default": false,
+                "name": "globalDocuments",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=powerpoint&module=globalDocuments"
+            }
+        ]
+    },
+    "userPreferences": {
+        "preferredTimeZone": "America/Chicago",
+        "preferredCurrency": "USD",
+        "userName": "suser"
+    },
+    "name": "passport-office",
+    "helpUrl": "/application/office/v1.5.6118/officeHelp/office_companion_module_for_passport.htm",
+    "ocVersion": "1.5.6118",
+    "defaultUrl": "/application/office/v1.5.6118/index.html",
+    "enableJackrabbitFoldering": true
+}

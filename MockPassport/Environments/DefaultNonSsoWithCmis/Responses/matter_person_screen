@@ -1,0 +1,57 @@
+<table class="table"><thead><tr><th colspan="2" class="select"></th><th class="type-Boolean sortable" data-direction="" data-path="isActive">
+										Active
+									</th><th class="type-String sortable" data-direction="" data-path="comments">
+										Comments
+									</th><th class="type-Date sortable" data-direction="" data-path="endDate">
+										End Date
+									</th><th class="type-MultiAssociation" data-direction="" data-path="person.addresses">
+										Addresses
+									</th><th class="type-String sortable" data-direction="" data-path="person.fullName">
+										Full Name
+									</th><th class="type-MultiAssociation" data-direction="" data-path="person.imAddresses">
+										Im Addresses
+									</th><th class="type-String" data-direction="" data-path="person.mailingAddress">
+										Mailing Address
+									</th><th class="type-String" data-direction="" data-path="person.personType.typeAndDisplayName">
+										Type and Display Name
+									</th><th class="type-MultiAssociation" data-direction="" data-path="person.phones">
+										Phones
+									</th><th class="type-String" data-direction="" data-path="person.primaryEmailAddress">
+										Primary Email Address
+									</th><th class="type-MultiAssociation" data-direction="" data-path="person.webpageAddresses">
+										Web Page Address
+									</th><th class="type-String" data-direction="" data-path="primaryPhone">
+										Primary Phone
+									</th><th class="type-String sortable" data-direction="" data-path="roleInvolvement.displayName">
+										Display Name
+									</th><th class="type-Date sortable" data-direction="" data-path="startDate">
+										Start Date
+									</th></tr></thead><tbody><tr data-id="163"><script type="text/json">{}</script><td class="select"></td><td class="icons"></td><td class="type-Boolean ">
+				Yes
+			</td><td class="type-String ">
+				
+			</td><td class="type-Date ">
+				
+			</td><td class="type-MultiAssociation ">
+				[]
+			</td><td class="type-String ">
+				First_F323999723 20190701 040803 First_L323999723 20190701 040803
+			</td><td class="type-MultiAssociation ">
+				[]
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				Internal - GCO
+			</td><td class="type-MultiAssociation ">
+				[]
+			</td><td class="type-String ">
+				manjeetsingh.panwar@wolterskluwer.com
+			</td><td class="type-MultiAssociation ">
+				[]
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				GCO Person In Charge
+			</td><td class="type-Date ">
+				07/01/2019
+			</td></tr></tbody></table>

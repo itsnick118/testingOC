@@ -1,0 +1,6 @@
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-FRAME-OPTIONS: SAMEORIGIN
+Transfer-Encoding: chunked
+Date: Fri, 09 Aug 2019 13:24:31 GMT
+Server: None

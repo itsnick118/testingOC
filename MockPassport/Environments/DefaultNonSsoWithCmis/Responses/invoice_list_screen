@@ -1,0 +1,61 @@
+<table class="table"><thead><tr><th colspan="2" class="select"><input class="toggle-checkboxes" type="checkbox"/></th><th class="type-Number" data-direction="" data-path="daysAtCurrentStep">
+										Days At Current Step
+									</th><th class="type-Boolean" data-direction="" data-path="isSubTotalInvoice">
+										Is Sub Total Invoice
+									</th><th class="type-Boolean sortable" data-direction="" data-path="hasDocuments">
+										Has Documents
+									</th><th class="type-String sortable" data-direction="" data-path="invoiceNumber">
+										Invoice Number
+									</th><th class="type-Money sortable" data-direction="" data-path="invoiceSummary.expenseTotalAdjustmentAmount.amount">
+										Expense Total Adjustment Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="invoiceSummary.expenseTotalDiscountAmount.amount">
+										Expense Total Discount Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="invoiceSummary.expenseTotalGrossAmount.amount">
+										Expense Total Gross Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="invoiceSummary.feeTotalAdjustmentAmount.amount">
+										Fee Total Adjustment Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="invoiceSummary.feeTotalDiscountAmount.amount">
+										Fee Total Discount Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="invoiceSummary.feeTotalGrossAmount.amount">
+										Fee Total Gross Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="invoiceSummary.totalNetAmount.amount">
+										Total Net Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="invoiceSummary.totalTaxAmount.amount">
+										Total Tax Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="invoiceSummary.totalUnadjustedAmount.amount">
+										Total Unadjusted Amount
+									</th><th class="type-String sortable" data-direction="" data-path="matterOrg.matter.matterNumber">
+										Matter Number
+									</th><th class="type-DateTime sortable" data-direction="" data-path="receivedDate">
+										Received Date
+									</th><th class="type-MultiAssociation" data-direction="" data-path="warningMessages">
+										Warning Messages
+									</th><th class="type-Date sortable" data-direction="" data-path="invoiceDate">
+										Invoice Date
+									</th><th class="type-Date sortable" data-direction="" data-path="invoiceEndDate">
+										Invoice End Date
+									</th><th class="type-Date sortable" data-direction="" data-path="invoiceStartDate">
+										Invoice Start Date
+									</th><th class="type-SingleAssociation sortable" data-direction="" data-path="invoiceStatus">
+										Invoice Status
+									</th><th class="type-SingleAssociation sortable" data-direction="" data-path="matterOrg.matter">
+										Matter
+									</th><th class="type-SingleAssociation sortable" data-direction="" data-path="invoiceDisposition">
+										State
+									</th><th class="type-Boolean sortable" data-direction="" data-path="hasWarnings">
+										Has Warnings
+									</th><th class="type-String sortable" data-direction="" data-path="invoiceDisposition.code">
+										Code
+									</th><th class="type-String" data-direction="" data-path="warningText">
+										Warning Text
+									</th><th class="type-SingleAssociation sortable" data-direction="" data-path="matterOrg.organization">
+										Organization
+									</th><th class="type-String sortable" data-direction="" data-path="matterOrg.matter.name">
+										Matter Name
+									</th><th class="type-String sortable" data-direction="" data-path="matterOrg.organization.name">
+										Name
+									</th><th class="type-String sortable" data-direction="" data-path="matterOrg.organization.vendorId">
+										Vendor ID
+									</th><th class="type-DateTime sortable sort-ascending" data-direction="ASCENDING" data-path="approvalInstance.currentStep.startDate">
+										Start Date
+									</th></tr></thead><tbody><tr class="nodata"><td class="nodata" colspan="32"><div class="no-results">No Matching Records</div></td></tr></tbody></table>

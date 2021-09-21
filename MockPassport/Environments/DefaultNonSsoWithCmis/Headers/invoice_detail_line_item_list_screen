@@ -1,0 +1,10 @@
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-UA-Compatible: IE=10
+X-FRAME-OPTIONS: SAMEORIGIN
+Pragma: no-cache
+metadata: {"parentFieldName":"detailLineItems","cssClasses":"mode-edit screen list","screen-name":"DetailLineItemListScreen - OC Spend Management","searchInput.pageInfo.currentPageNumber":"1","searchInput.pageInfo.totalRecords":"4","parentEntityId":"179","parentInstanceId":"44","searchInput.pageInfo.totalPages":"1","isCalendarView":"false","column-data":"id:10510|id:10511|id:10512|id:10513|id:10514|id:10515|id:10516|id:10517|id:10518|id:10519|id:10520|id:10521|id:10522|id:10523|id:10524|id:10525|id:10526|id:10602|id:10603|id:10604|id:10605|id:10606|id:10607","sort-data":"id,ASCENDING","searchInput.pageInfo.currentPageSize":"25","id":"1910","documentTitle":"Detail Line Items - OC Spend Management","entity":"147"}
+Vary: Accept-Encoding
+Cache-Control: no-cache
+Date: Fri, 09 Aug 2019 13:24:06 GMT
+Server: None

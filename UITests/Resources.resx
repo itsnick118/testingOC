@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CompanionConfig" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;DictionaryProxyOfStringObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;LoggingLevel&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:string"&gt;WARN&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;BaseUrl&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:string"&gt;&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;CopyEmailsWhenFiling&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:boolean"&gt;true&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;UserName&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:string"&gt;&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;Password&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:string"&gt;&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;LocalFilePath&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:string"&gt;&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;ShowCollapsedOnStart&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:boolean"&gt;false&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;AutomaticThreadLinking&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:boolean"&gt;false&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;UseSso&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:boolean"&gt;false&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;OpenPassportLinksInDefaultBrowser&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:boolean"&gt;false&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;EnablePerformanceLogging&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:boolean"&gt;false&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;LogAnonymousUsageStatistics&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:boolean"&gt;true&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;LastAutoUpdatePerformedDateTime&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:dateTime"&gt;2018-10-06T14:32:38.5907784-04:00&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+  &lt;KeysAndValues&gt;
+    &lt;Key&gt;InitialLoad&lt;/Key&gt;
+    &lt;Value xsi:type="xsd:boolean"&gt;true&lt;/Value&gt;
+  &lt;/KeysAndValues&gt;
+&lt;/DictionaryProxyOfStringObject&gt;</value>
+  </data>
+  <data name="FavoriteMatters" xml:space="preserve">
+    <value>[
+    {
+        "_id": "1",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "QA1",
+        "matterNumber": "MAT-1",
+        "primaryMatterType": "Contracts",
+        "openDate": "08/29/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "brown sally",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "0.00 USD",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 08/29/2018",
+        "combinedColumns": "MAT-1 ● brown sally ● Open - 08/29/2018 ● 0.00 USD"
+    },
+    {
+        "_id": "13",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Test Matter 3",
+        "matterNumber": "MAT-13",
+        "primaryMatterType": "Patent",
+        "openDate": "09/07/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "super user",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/07/2018",
+        "combinedColumns": "MAT-13 ● super user ● Open - 09/07/2018"
+    },
+    {
+        "_id": "14",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Test Matter 4",
+        "matterNumber": "MAT-14",
+        "primaryMatterType": "Patent",
+        "openDate": "09/07/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "brown sally",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/07/2018",
+        "combinedColumns": "MAT-14 ● brown sally ● Open - 09/07/2018"
+    },
+    {
+        "_id": "15",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Test Matter 5",
+        "matterNumber": "MAT-15",
+        "primaryMatterType": "Patent",
+        "openDate": "09/07/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "brown sally",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/07/2018",
+        "combinedColumns": "MAT-15 ● brown sally ● Open - 09/07/2018"
+    },
+    {
+        "_id": "20",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Test Matter 10",
+        "matterNumber": "MAT-20",
+        "primaryMatterType": "Patent",
+        "openDate": "09/07/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "brown sally",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/07/2018",
+        "combinedColumns": "MAT-20 ● brown sally ● Open - 09/07/2018"
+    },
+    {
+        "_id": "21",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Test Matter 11",
+        "matterNumber": "MAT-21",
+        "primaryMatterType": "Patent",
+        "openDate": "09/07/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "brown sally",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/07/2018",
+        "combinedColumns": "MAT-21 ● brown sally ● Open - 09/07/2018"
+    },
+    {
+        "_id": "22",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Test Matter 12",
+        "matterNumber": "MAT-22",
+        "primaryMatterType": "Patent",
+        "openDate": "09/07/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "brown sally",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/07/2018",
+        "combinedColumns": "MAT-22 ● brown sally ● Open - 09/07/2018"
+    },
+    {
+        "_id": "23",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Test Matter 13",
+        "matterNumber": "MAT-23",
+        "primaryMatterType": "Patent",
+        "openDate": "09/07/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "brown sally",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/07/2018",
+        "combinedColumns": "MAT-23 ● brown sally ● Open - 09/07/2018"
+    },
+    {
+        "_id": "24",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Kudisch",
+        "matterNumber": "MAT-24",
+        "primaryMatterType": "Litigation",
+        "openDate": "09/21/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "super user",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/21/2018",
+        "combinedColumns": "MAT-24 ● super user ● Open - 09/21/2018"
+    },
+    {
+        "_id": "4",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Test Matter",
+        "matterNumber": "MAT-4",
+        "primaryMatterType": "Bankruptcy",
+        "openDate": "09/07/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "super user",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/07/2018",
+        "combinedColumns": "MAT-4 ● super user ● Open - 09/07/2018"
+    },
+    {
+        "_id": "7",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Test Matter 1",
+        "matterNumber": "MAT-7",
+        "primaryMatterType": "Government",
+        "openDate": "09/07/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "brown sally",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/07/2018",
+        "combinedColumns": "MAT-7 ● brown sally ● Open - 09/07/2018"
+    },
+    {
+        "_id": "8",
+        "_type": "Matter",
+        "_metadataId": 193,
+        "name": "Test Matter 2",
+        "matterNumber": "MAT-8",
+        "primaryMatterType": "Labor And Employment",
+        "openDate": "09/07/2018",
+        "matterStatus": "Open",
+        "primaryInternalPerson_fullName": "brown sally",
+        "closeDate": "",
+        "practiceAreaBusinessUnit": "OC-OC",
+        "spendToDate": "",
+        "matterStatus_code": "Open",
+        "matterStatusCalc": "Open - 09/07/2018",
+        "combinedColumns": "MAT-8 ● brown sally ● Open - 09/07/2018"
+    }
+]</value>
+  </data>
+  <data name="MemoryAndCpuReportTitle" xml:space="preserve">
+    <value>Memory and CPU Utilization Report</value>
+  </data>
+  <data name="OpenAndExpandNInspectorWindowsWithoutClosing" xml:space="preserve">
+    <value>Log in to Office Companion
+Open e-mail inspector window
+Expand the Office Companion
+Wait for the Office Companion to load plus two seconds
+Repeat steps 2-4, {n} times
+Close all inspector windows</value>
+  </data>
+  <data name="OpenExpandAndCloseNInspectorWindows" xml:space="preserve">
+    <value>Log in to Office Companion
+Open e-mail inspector window
+Expand the Office Companion
+Wait for the Office Companion to load plus two seconds
+Close inspector window
+Repeat steps 2-5, {n} times</value>
+  </data>
+  <data name="ReloadInvoiceList" xml:space="preserve">
+    <value>Log in to Office Companion
+Open matters tab
+Open spend tab
+Repeat steps 2-3, {n} times</value>
+  </data>
+  <data name="ReloadMatterList" xml:space="preserve">
+    <value>Log in to Office Companion
+Open all matters tab
+Open favorites list
+Repeat steps 2-3, {n} times</value>
+  </data>
+  <data name="ReloadMatterSummaryTabs" xml:space="preserve">
+    <value>Log in to Office Companion
+Open matter emails tab
+Open matter documents tab
+Open matter narratives tab
+Open matter people tab
+Open matter tasks/events tab
+Repeat steps 2-6, {n} times</value>
+  </data>
+  <data name="ReportTemplate" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+
+&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+    &lt;style type="text/css"&gt;
+        body {
+            font-family: "Times New Roman";
+            font-size: 12px;
+            padding: 0.2in 0.3in;
+            color: black;
+        }
+        h1 {
+            font-size: 17px;
+        }
+        h2 {
+            font-size: 15px;
+        }
+        h3 {
+            font-style: italic;
+            font-size: 15px;
+            font-weight: normal;
+        }
+        table, div, img  {
+            page-break-inside: avoid;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            color:black;
+        }
+        .first-row {
+            color: white;
+        }
+        table.info-container {
+            width: 80%;
+            text-align: center;
+            margin-bottom: 0.2in;
+        }
+        img {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .bad {
+            color: #B22222;
+        }
+        .good {
+            color: #2E8B57;
+        }
+        .highlight {
+            font-weight: bold;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="ScrollInvoiceList" xml:space="preserve">
+    <value>Log in to Office Companion
+Open spend tab
+Scroll to bottom of the list of 500 invoices</value>
+  </data>
+  <data name="ScrollMatterList" xml:space="preserve">
+    <value>Log in to Office Companion
+Open matters tab
+Scroll to bottom of the list of 500 matters</value>
+  </data>
+  <data name="UploadNEmailsAtOnce" xml:space="preserve">
+    <value>Populate test emails folder with {n} messages
+Log in to Office Companion
+Open first matter in list
+Open test emails folder and select all messages
+Drag all selected messages to opened matter</value>
+  </data>
+  <data name="UploadNEmailsOneAtATime" xml:space="preserve">
+    <value>Populate test emails folder with {n} messages
+Log in to Office Companion
+Open first matter in list
+Open test emails folder and select first (or next) email
+Drag email opened matter
+Repeat steps 3-5, {n} times</value>
+  </data>
+</root>

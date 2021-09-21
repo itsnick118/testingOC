@@ -1,0 +1,19 @@
+<table class="table"><thead><tr><th colspan="2" class="select"></th><th class="type-String sortable sort-ascending" data-direction="ASCENDING" data-path="eventType.code">
+										Type
+									</th><th class="type-String sortable" data-direction="" data-path="name">
+										Name
+									</th><th class="type-DateTime sortable sort-ascending" data-direction="ASCENDING" data-path="startDateTime">
+										Start Date Time
+									</th><th class="type-DateTime sortable" data-direction="" data-path="endDateTime">
+										End Date Time
+									</th><th class="type-Date sortable sort-ascending" data-direction="ASCENDING" data-path="dueDate">
+										Due Date
+									</th><th class="type-Date sortable" data-direction="" data-path="completedDate">
+										Completed Date
+									</th><th class="type-String sortable" data-direction="" data-path="createdBy">
+										Created By
+									</th><th class="type-String sortable" data-direction="" data-path="description">
+										Description
+									</th><th class="type-String sortable" data-direction="" data-path="eventType.displayName">
+										Display Name
+									</th></tr></thead><tbody><tr class="nodata"><td class="nodata" colspan="11"><div class="no-results">No Matching Records</div></td></tr></tbody></table>

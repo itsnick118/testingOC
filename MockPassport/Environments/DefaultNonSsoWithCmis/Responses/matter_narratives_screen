@@ -1,0 +1,17 @@
+<table class="table"><thead><tr><th colspan="2" class="select"></th><th class="type-DateTime sortable sort-descending" data-direction="DESCENDING" data-path="narrativeDate">
+										Narrative Date
+									</th><th class="type-SingleAssociation sortable" data-direction="" data-path="narrativeType">
+										Narrative Type
+									</th><th class="type-Text sortable" data-direction="" data-path="narrative">
+										Narrative
+									</th><th class="type-String sortable" data-direction="" data-path="enteredBy">
+										Entered By
+									</th><th class="type-Date sortable" data-direction="" data-path="enteredOn">
+										Entered On
+									</th><th class="type-Boolean sortable" data-direction="" data-path="collaboration">
+										Collaboration
+									</th><th class="type-DateTime sortable" data-direction="" data-path="updatedAt">
+										Updated At
+									</th><th class="type-String sortable" data-direction="" data-path="updatedBy">
+										Updated By
+									</th></tr></thead><tbody><tr class="nodata"><td class="nodata" colspan="10"><div class="no-results">No Matching Records</div></td></tr></tbody></table>

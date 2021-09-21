@@ -1,0 +1,39 @@
+<table class="table"><thead><tr><th colspan="2" class="select"></th><th class="type-String sortable" data-direction="" data-path="senderName">
+										From
+									</th><th class="type-String sortable" data-direction="" data-path="subject">
+										Subject
+									</th><th class="type-Boolean sortable sort-descending" data-direction="DESCENDING" data-path="isFolder">
+										Is Folder
+									</th><th class="type-DateTime sortable sort-descending" data-direction="DESCENDING" data-path="receivedTime">
+										Received
+									</th><th class="type-String sortable" data-direction="" data-path="name">
+										Name
+									</th><th class="type-String sortable" data-direction="" data-path="folderPath">
+										Folder Path
+									</th><th class="type-String" data-direction="" data-path="fullPath">
+										Full Path
+									</th><th class="type-Integer sortable" data-direction="" data-path="documentSize">
+										Document Size
+									</th><th class="type-Boolean sortable" data-direction="" data-path="isAttachmentsPresent">
+										Attachment Present
+									</th><th class="type-Text sortable" data-direction="" data-path="mailBody">
+										Mail Body
+									</th><th class="type-String sortable" data-direction="" data-path="recipients">
+										Recipients
+									</th><th class="type-String sortable" data-direction="" data-path="senderEmailAddress">
+										Sender Email Address
+									</th><th class="type-DateTime sortable" data-direction="" data-path="sentTime">
+										Sent Time
+									</th><th class="type-String" data-direction="" data-path="relatedEntityInstanceId">
+										Related Entity Instance Id
+									</th><th class="type-String" data-direction="" data-path="relatedEntityName">
+										Related Entity Name
+									</th><th class="type-Boolean sortable" data-direction="" data-path="isEmailMessage">
+										Is Email Message
+									</th><th class="type-Number sortable" data-direction="" data-path="id">
+										ID
+									</th><th class="type-String" data-direction="" data-path="fileKey">
+										FileKey
+									</th><th class="type-String sortable" data-direction="" data-path="fileKeyEncoded">
+										File Key Encoded
+									</th></tr></thead><tbody><tr class="nodata"><td class="nodata" colspan="21"><div class="no-results">No Matching Records</div></td></tr></tbody></table>

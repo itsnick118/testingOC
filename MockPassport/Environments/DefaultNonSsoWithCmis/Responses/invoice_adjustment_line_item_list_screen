@@ -1,0 +1,23 @@
+<table class="table"><thead><tr><th colspan="2" class="select"></th><th class="icon" data-direction="" data-path="id:iconPageWhiteCodeRed"></th><th class="type-SingleAssociation sortable sort-ascending" data-direction="ASCENDING" data-path="lineItemType">
+										Line Item Type
+									</th><th class="type-Date sortable" data-direction="" data-path="lineItemDate">
+										Line Item Date
+									</th><th class="type-Money sortable" data-direction="" data-path="redLineAdjustment.amount">
+										Red Line Adjustment
+									</th><th class="type-Money" data-direction="" data-path="redLineTotal.amount">
+										Red Line Total
+									</th><th class="type-Money sortable" data-direction="" data-path="header.invoiceSummary.expenseTotalAdjustmentAmount.amount">
+										Expense Total Adjustment Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="header.invoiceSummary.expenseTotalGrossAmount.amount">
+										Expense Total Gross Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="header.invoiceSummary.expenseTotalInitialAmount.amount">
+										Expense Total Initial Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="header.invoiceSummary.feeTotalAdjustmentAmount.amount">
+										Fee Total Adjustment Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="header.invoiceSummary.feeTotalGrossAmount.amount">
+										Fee Total Gross Amount
+									</th><th class="type-Money sortable" data-direction="" data-path="header.invoiceSummary.feeTotalInitialAmount.amount">
+										Fee Total Initial Amount
+									</th><th class="type-String sortable" data-direction="" data-path="lineItemType.displayName">
+										Display Name
+									</th></tr></thead><tbody><tr class="nodata"><td class="nodata" colspan="14"><div class="no-results">No Matching Records</div></td></tr></tbody></table>

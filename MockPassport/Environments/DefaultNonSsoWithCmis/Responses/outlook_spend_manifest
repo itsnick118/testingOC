@@ -1,0 +1,65 @@
+{
+    "application": {
+        "userDefinedFields": {
+            "matterInfo": [
+                {
+                    "showcolumn": true,
+                    "name": "Filed to Passport",
+                    "type": "YesNo",
+                    "searchIndicator": true,
+                    "value": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "name",
+                    "name": "Passport Matter Name",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "matterNumber",
+                    "name": "Passport Matter Number",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "_id",
+                    "name": "Passport Matter ID",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "parentDocument",
+                    "name": "Passport Folder ID",
+                    "type": "text",
+                    "multivalue": true
+                },
+                {
+                    "showcolumn": false,
+                    "propertyname": "parentInfo",
+                    "name": "Passport Parent Info",
+                    "type": "text",
+                    "multivalue": true
+                }
+            ],
+            "draftInternal": [
+                {
+                    "showcolumn": false,
+                    "isguid": true,
+                    "propertyname": "OCDeferredTransactionId",
+                    "name": "OCDeferredTransactionId",
+                    "type": "text",
+                    "multivalue": false
+                }
+            ]
+        }
+    },
+    "userDefaults": {
+        "dateTimeFormat": "MM/dd/yyyy hh:mm a",
+        "dateFormat": "MM/dd/yyyy",
+        "timeFormat": "hh:mm a"
+    }
+}

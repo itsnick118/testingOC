@@ -1,0 +1,101 @@
+{
+    "sendLogEmail": "",
+    "autoUpdate": {
+        "enableAutoUpdate": true,
+        "autoUpdateUrl": "/enduser/office/companion/ocautoupdate.do"
+    },
+    "availableApps": {
+        "excel": [
+            {
+                "default": true,
+                "name": "matter",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=excel&module=matter"
+            },
+            {
+                "default": false,
+                "name": "globalDocuments",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=excel&module=globalDocuments"
+            }
+        ],
+        "outlook": [
+            {
+                "default": true,
+                "name": "matter",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=outlook&module=matter"
+            },
+            {
+                "default": false,
+                "name": "globalDocuments",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=outlook&module=globalDocuments"
+            }
+        ],
+        "word": [
+            {
+                "default": true,
+                "name": "matter",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=word&module=matter"
+            },
+            {
+                "default": false,
+                "name": "globalDocuments",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=word&module=globalDocuments"
+            }
+        ],
+        "powerpoint": [
+            {
+                "default": true,
+                "name": "matter",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=powerpoint&module=matter"
+            },
+            {
+                "default": false,
+                "name": "globalDocuments",
+                "uri": "/enduser/office/manifest/ocmanifest.do?officeapp=powerpoint&module=globalDocuments"
+            }
+        ]
+    },
+    "helpUrl": "/application/office/v1.5.7152/officeHelp/office_companion_module_for_passport.htm",
+    "ocVersion": "1.5.7152",
+    "feedback": {
+        "showFeedbackUrl": "feedback.html",
+        "showFeedback": true
+    },
+    "usePassportCmisObject": true,
+    "systemMessages": {
+        "listPage": "To be Acknowledged by Me - Office",
+        "itemPage": "Acknowledgement System Message - Edit Page - Office"
+    },
+    "panes": [
+        {
+            "locations": [
+                "inspector",
+                "explorer"
+            ],
+            "type": "mail"
+        },
+        {
+            "locations": [
+                "inspector",
+                "explorer"
+            ],
+            "type": "appointment"
+        }
+    ],
+    "userPreferences": {
+        "preferredTimeZone": "America/Chicago",
+        "dateTimeFormat": "MM/dd/yyyy hh:mm a",
+        "dateFormat": "MM/dd/yyyy",
+        "preferredCurrency": "USD",
+        "timeFormat": "hh:mm a",
+        "userName": "admin",
+        "locale": "us"
+    },
+    "name": "passport-office",
+    "userDefaults": {
+        "dateTimeFormat": "MM/dd/yyyy hh:mm a",
+        "dateFormat": "MM/dd/yyyy",
+        "timeFormat": "hh:mm a"
+    },
+    "defaultUrl": "/application/office/v1.5.7152/officeui/index.html",
+    "enableJackrabbitFoldering": true
+}

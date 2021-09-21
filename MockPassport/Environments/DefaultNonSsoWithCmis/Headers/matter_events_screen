@@ -1,0 +1,10 @@
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-UA-Compatible: IE=10
+X-FRAME-OPTIONS: SAMEORIGIN
+Pragma: no-cache
+metadata: {"parentFieldName":"matterEvents","cssClasses":"mode-edit screen list","screen-name":"Matter Event List - OC Matter Management","searchInput.pageInfo.currentPageNumber":"1","searchInput.pageInfo.totalRecords":"0","parentEntityId":"193","parentInstanceId":"17","searchInput.pageInfo.totalPages":"0","isCalendarView":"false","column-data":"id:10346|id:10348|id:10349|id:10345|id:10344|id:10341|id:10342|id:10343|id:10347","sort-data":"eventType.code,ASCENDING|startDateTime,ASCENDING|dueDate,ASCENDING","searchInput.pageInfo.currentPageSize":"25","id":"1888","documentTitle":"Matter Task\/Event List","entity":"199"}
+Vary: Accept-Encoding
+Cache-Control: no-cache
+Date: Fri, 09 Aug 2019 13:24:13 GMT
+Server: None

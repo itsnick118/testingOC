@@ -1,0 +1,2477 @@
+﻿<!-- ReSharper disable All -->
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2" class="select"><input class="toggle-checkboxes" type="checkbox" /></th>
+            <th class="type-Number" data-direction="" data-path="daysAtCurrentStep">
+                Days At Current Step
+            </th>
+            <th class="type-Boolean" data-direction="" data-path="isSubTotalInvoice">
+                Is Sub Total Invoice
+            </th>
+            <th class="type-Boolean sortable" data-direction="" data-path="hasDocuments">
+                Has Documents
+            </th>
+            <th class="type-String sortable" data-direction="" data-path="invoiceNumber">
+                Invoice Number
+            </th>
+            <th class="type-Money sortable" data-direction="" data-path="invoiceSummary.expenseTotalAdjustmentAmount.baseAmount">
+                Expense Total Adjustment Amount
+            </th>
+            <th class="type-Money sortable" data-direction="" data-path="invoiceSummary.expenseTotalDiscountAmount.baseAmount">
+                Expense Total Discount Amount
+            </th>
+            <th class="type-Money sortable" data-direction="" data-path="invoiceSummary.expenseTotalGrossAmount.baseAmount">
+                Expense Total Gross Amount
+            </th>
+            <th class="type-Money sortable" data-direction="" data-path="invoiceSummary.feeTotalAdjustmentAmount.baseAmount">
+                Fee Total Adjustment Amount
+            </th>
+            <th class="type-Money sortable" data-direction="" data-path="invoiceSummary.feeTotalDiscountAmount.baseAmount">
+                Fee Total Discount Amount
+            </th>
+            <th class="type-Money sortable" data-direction="" data-path="invoiceSummary.feeTotalGrossAmount.baseAmount">
+                Fee Total Gross Amount
+            </th>
+            <th class="type-Money sortable" data-direction="" data-path="invoiceSummary.totalNetAmount.baseAmount">
+                Total Net Amount
+            </th>
+            <th class="type-Money sortable" data-direction="" data-path="invoiceSummary.totalTaxAmount.baseAmount">
+                Total Tax Amount
+            </th>
+            <th class="type-Money sortable" data-direction="" data-path="invoiceSummary.totalUnadjustedAmount.baseAmount">
+                Total Unadjusted Amount
+            </th>
+            <th class="type-String sortable" data-direction="" data-path="matterOrg.matter.matterNumber">
+                Matter Number
+            </th>
+            <th class="type-DateTime sortable" data-direction="" data-path="receivedDate">
+                Received Date
+            </th>
+            <th class="type-MultiAssociation" data-direction="" data-path="warningMessages">
+                Warning Messages
+            </th>
+            <th class="type-Date sortable" data-direction="" data-path="invoiceDate">
+                Invoice Date
+            </th>
+            <th class="type-Date sortable" data-direction="" data-path="invoiceEndDate">
+                Invoice End Date
+            </th>
+            <th class="type-Date sortable" data-direction="" data-path="invoiceStartDate">
+                Invoice Start Date
+            </th>
+            <th class="type-SingleAssociation sortable" data-direction="" data-path="invoiceStatus">
+                Invoice Status
+            </th>
+            <th class="type-SingleAssociation sortable" data-direction="" data-path="matterOrg.matter">
+                Matter
+            </th>
+            <th class="type-SingleAssociation sortable" data-direction="" data-path="invoiceDisposition">
+                State
+            </th>
+            <th class="type-Boolean sortable" data-direction="" data-path="hasWarnings">
+                Has Warnings
+            </th>
+            <th class="type-String sortable" data-direction="" data-path="invoiceDisposition.code">
+                Code
+            </th>
+            <th class="type-String" data-direction="" data-path="warningText">
+                Warning Text
+            </th>
+            <th class="type-SingleAssociation sortable" data-direction="" data-path="matterOrg.organization">
+                Organization
+            </th>
+            <th class="type-String sortable" data-direction="" data-path="matterOrg.matter.name">
+                Matter Name
+            </th>
+            <th class="type-String sortable" data-direction="" data-path="matterOrg.organization.name">
+                Name
+            </th>
+            <th class="type-String sortable" data-direction="" data-path="matterOrg.organization.vendorId">
+                Vendor ID
+            </th>
+            <th class="type-DateTime sortable sort-ascending" data-direction="ASCENDING" data-path="approvalInstance.currentStep.startDate">
+                Start Date
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-id="1">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="1" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-1-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                24.00 USD
+            </td>
+            <td class="type-Money ">
+                1,976.00 USD
+            </td>
+            <td class="type-Money ">
+                2,000.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                2,000.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:10 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                [com.datacert.apps.mattermanagement.models.Message@bcac24a]
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/16/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                Yes
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String ">
+                ePacket Staging: Auto-created Timekeeper Level: PT
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:21 AM
+            </td>
+        </tr>
+        <tr data-id="2">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="2" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-2-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (7.72) USD
+            </td>
+            <td class="type-Money ">
+                2,107.72 USD
+            </td>
+            <td class="type-Money ">
+                2,100.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                2,100.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                07/29/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:21 AM
+            </td>
+        </tr>
+        <tr data-id="3">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="3" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-3-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                16.00 USD
+            </td>
+            <td class="type-Money ">
+                2,184.00 USD
+            </td>
+            <td class="type-Money ">
+                2,200.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                2,200.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/17/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:21 AM
+            </td>
+        </tr>
+        <tr data-id="4">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="4" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-4-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                12.19 USD
+            </td>
+            <td class="type-Money ">
+                2,287.81 USD
+            </td>
+            <td class="type-Money ">
+                2,300.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                2,300.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/21/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:22 AM
+            </td>
+        </tr>
+        <tr data-id="5">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="5" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-5-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                2,400.00 USD
+            </td>
+            <td class="type-Money ">
+                2,400.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                2,400.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/03/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:22 AM
+            </td>
+        </tr>
+        <tr data-id="6">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="6" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-6-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (1.25) USD
+            </td>
+            <td class="type-Money ">
+                2,501.25 USD
+            </td>
+            <td class="type-Money ">
+                2,500.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                2,500.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                07/27/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:22 AM
+            </td>
+        </tr>
+        <tr data-id="8">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="8" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-8-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                18.66 USD
+            </td>
+            <td class="type-Money ">
+                2,681.34 USD
+            </td>
+            <td class="type-Money ">
+                2,700.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                2,700.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/10/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:22 AM
+            </td>
+        </tr>
+        <tr data-id="9">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="9" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-9-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (8.00) USD
+            </td>
+            <td class="type-Money ">
+                2,808.00 USD
+            </td>
+            <td class="type-Money ">
+                2,800.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                2,800.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                07/27/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:22 AM
+            </td>
+        </tr>
+        <tr data-id="10">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="10" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-10-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                11.89 USD
+            </td>
+            <td class="type-Money ">
+                2,888.11 USD
+            </td>
+            <td class="type-Money ">
+                2,900.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                2,900.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/19/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:22 AM
+            </td>
+        </tr>
+        <tr data-id="11">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="11" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-11-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (8.00) USD
+            </td>
+            <td class="type-Money ">
+                3,008.00 USD
+            </td>
+            <td class="type-Money ">
+                3,000.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                3,000.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/10/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:23 AM
+            </td>
+        </tr>
+        <tr data-id="12">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="12" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-12-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (1.55) USD
+            </td>
+            <td class="type-Money ">
+                3,101.55 USD
+            </td>
+            <td class="type-Money ">
+                3,100.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                3,100.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/17/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:23 AM
+            </td>
+        </tr>
+        <tr data-id="13">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="13" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-13-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (8.00) USD
+            </td>
+            <td class="type-Money ">
+                3,208.00 USD
+            </td>
+            <td class="type-Money ">
+                3,200.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                3,200.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/09/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:23 AM
+            </td>
+        </tr>
+        <tr data-id="14">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="14" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-14-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (8.32) USD
+            </td>
+            <td class="type-Money ">
+                3,308.32 USD
+            </td>
+            <td class="type-Money ">
+                3,300.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                3,300.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                07/23/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:23 AM
+            </td>
+        </tr>
+        <tr data-id="15">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="15" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-15-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                16.00 USD
+            </td>
+            <td class="type-Money ">
+                3,384.00 USD
+            </td>
+            <td class="type-Money ">
+                3,400.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                3,400.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:11 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/17/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:23 AM
+            </td>
+        </tr>
+        <tr data-id="16">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="16" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-16-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                11.59 USD
+            </td>
+            <td class="type-Money ">
+                3,488.41 USD
+            </td>
+            <td class="type-Money ">
+                3,500.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                3,500.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:12 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/09/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:23 AM
+            </td>
+        </tr>
+        <tr data-id="17">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="17" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-17-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                16.00 USD
+            </td>
+            <td class="type-Money ">
+                3,584.00 USD
+            </td>
+            <td class="type-Money ">
+                3,600.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                3,600.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:12 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/20/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:24 AM
+            </td>
+        </tr>
+        <tr data-id="18">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="18" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-18-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (28.53) USD
+            </td>
+            <td class="type-Money ">
+                3,728.53 USD
+            </td>
+            <td class="type-Money ">
+                3,700.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                3,700.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:12 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/05/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:24 AM
+            </td>
+        </tr>
+        <tr data-id="19">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="19" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-19-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (16.00) USD
+            </td>
+            <td class="type-Money ">
+                3,816.00 USD
+            </td>
+            <td class="type-Money ">
+                3,800.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                3,800.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:12 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/29/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:24 AM
+            </td>
+        </tr>
+        <tr data-id="20">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="20" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-20-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (8.62) USD
+            </td>
+            <td class="type-Money ">
+                3,908.62 USD
+            </td>
+            <td class="type-Money ">
+                3,900.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                3,900.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:12 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/22/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:24 AM
+            </td>
+        </tr>
+        <tr data-id="21">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="21" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-21-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                8.00 USD
+            </td>
+            <td class="type-Money ">
+                3,992.00 USD
+            </td>
+            <td class="type-Money ">
+                4,000.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                4,000.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:12 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                07/23/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:25 AM
+            </td>
+        </tr>
+        <tr data-id="22">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="22" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-22-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                11.29 USD
+            </td>
+            <td class="type-Money ">
+                4,088.71 USD
+            </td>
+            <td class="type-Money ">
+                4,100.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                4,100.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:14 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/06/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:25 AM
+            </td>
+        </tr>
+        <tr data-id="23">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="23" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-23-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (8.00) USD
+            </td>
+            <td class="type-Money ">
+                4,208.00 USD
+            </td>
+            <td class="type-Money ">
+                4,200.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                4,200.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:14 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/01/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:25 AM
+            </td>
+        </tr>
+        <tr data-id="24">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="24" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-24-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                31.20 USD
+            </td>
+            <td class="type-Money ">
+                4,268.80 USD
+            </td>
+            <td class="type-Money ">
+                4,300.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                4,300.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:14 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                07/25/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:25 AM
+            </td>
+        </tr>
+        <tr data-id="25">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="25" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-25-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (40.00) USD
+            </td>
+            <td class="type-Money ">
+                4,440.00 USD
+            </td>
+            <td class="type-Money ">
+                4,400.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                4,400.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:14 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/19/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:25 AM
+            </td>
+        </tr>
+        <tr data-id="26">
+            <script type="text/json">
+                {}
+            </script>
+            <td class="select"><input value="26" name="instance_id" type="checkbox" /></td>
+            <td class="icons"></td>
+            <td class="type-Number ">
+                19
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                InvoiceTest-26-1
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                (8.92) USD
+            </td>
+            <td class="type-Money ">
+                4,508.92 USD
+            </td>
+            <td class="type-Money ">
+                4,500.00 USD
+            </td>
+            <td class="type-Money ">
+                0.00 USD
+            </td>
+            <td class="type-Money ">
+                4,500.00 USD
+            </td>
+            <td class="type-String ">
+                MAT-1
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:14 AM
+            </td>
+            <td class="type-MultiAssociation ">
+                []
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                09/20/2018
+            </td>
+            <td class="type-Date ">
+                08/14/2018
+            </td>
+            <td class="type-SingleAssociation ">
+                Review
+            </td>
+            <td class="type-SingleAssociation ">
+                QA1 - MAT-1
+            </td>
+            <td class="type-SingleAssociation ">
+                Pending
+            </td>
+            <td class="type-Boolean ">
+                No
+            </td>
+            <td class="type-String ">
+                Pending
+            </td>
+            <td class="type-String "></td>
+            <td class="type-SingleAssociation ">
+                QA1 - 100
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                QA1
+            </td>
+            <td class="type-String ">
+                100
+            </td>
+            <td class="type-DateTime ">
+                09/20/2018 01:25 AM
+            </td>
+        </tr>
+    </tbody>
+</table><a class="list-fetch">Show More Items</a>

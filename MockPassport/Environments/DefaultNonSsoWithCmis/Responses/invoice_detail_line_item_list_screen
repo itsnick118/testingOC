@@ -1,0 +1,231 @@
+<table class="table"><thead><tr><th colspan="2" class="select"></th><th class="type-String sortable" data-direction="" data-path="activityCode.code">
+										Code
+									</th><th class="type-String sortable" data-direction="" data-path="description">
+										Description
+									</th><th class="type-Number sortable sort-ascending" data-direction="ASCENDING" data-path="id">
+										ID
+									</th><th class="type-Date sortable" data-direction="" data-path="lineItemDate">
+										Line Item Date
+									</th><th class="type-SingleAssociation sortable" data-direction="" data-path="lineItemType">
+										Line Item Type
+									</th><th class="type-Money sortable" data-direction="" data-path="netAmount.amount">
+										Net Amount
+									</th><th class="type-String sortable" data-direction="" data-path="personOrg.timekeeperID">
+										TK ID
+									</th><th class="type-String sortable" data-direction="" data-path="taskOrExpenseCode">
+										Task or Expense Code
+									</th><th class="type-String sortable" data-direction="" data-path="taskCode.displayName">
+										Display Name
+									</th><th class="type-String sortable" data-direction="" data-path="expenseCode.displayName">
+										Display Name
+									</th><th class="type-String sortable" data-direction="" data-path="personOrg.person.fullName">
+										Full Name
+									</th><th class="type-Integer sortable" data-direction="" data-path="warningCount">
+										Warning Count
+									</th><th class="type-String sortable" data-direction="" data-path="lineItemNumber">
+										Line Item Number
+									</th><th class="type-String sortable" data-direction="" data-path="lineItemType.code">
+										Code
+									</th><th class="type-String" data-direction="" data-path="warningText">
+										Warning Text
+									</th><th class="type-Money sortable" data-direction="" data-path="grossAmount.amount">
+										Gross Amount
+									</th><th class="type-String sortable" data-direction="" data-path="activityCode.displayName">
+										Display Name
+									</th><th class="type-Money sortable" data-direction="" data-path="discountAmount.amount">
+										Discount Amount
+									</th><th class="type-String sortable" data-direction="" data-path="personOrg.timekeeperLevel.displayName">
+										Display Name
+									</th><th class="type-Money sortable" data-direction="" data-path="rate.amount">
+										Rate
+									</th><th class="type-Money sortable" data-direction="" data-path="redLineAdjustment.amount">
+										Red Line Adjustment
+									</th><th class="type-Money sortable" data-direction="" data-path="taxAmount.amount">
+										Tax Amount
+									</th><th class="type-Decimal sortable" data-direction="" data-path="units">
+										Units
+									</th></tr></thead><tbody><tr data-id="5372"><script type="text/json">{}</script><td class="select"></td><td class="icons"></td><td class="type-String ">
+				A103
+			</td><td class="type-String ">
+				f1
+			</td><td class="type-Number ">
+				5,372
+			</td><td class="type-Date ">
+				07/01/2019
+			</td><td class="type-SingleAssociation ">
+				Fee
+			</td><td class="type-Money ">
+				0.25 USD
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				C300
+			</td><td class="type-String ">
+				Analysis and Advice
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				
+			</td><td class="type-Integer ">
+				0
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				Fee
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				0.25 USD
+			</td><td class="type-String ">
+				Draft/revise
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				0.25 USD
+			</td><td class="type-Money ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-Decimal ">
+				1.00
+			</td></tr><tr data-id="5373"><script type="text/json">{}</script><td class="select"></td><td class="icons"></td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				e1
+			</td><td class="type-Number ">
+				5,373
+			</td><td class="type-Date ">
+				07/01/2019
+			</td><td class="type-SingleAssociation ">
+				Expense
+			</td><td class="type-Money ">
+				0.25 USD
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				E101
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				Copying
+			</td><td class="type-String ">
+				
+			</td><td class="type-Integer ">
+				0
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				Expense
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				0.25 USD
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				0.25 USD
+			</td><td class="type-Money ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-Decimal ">
+				1.00
+			</td></tr><tr data-id="5374"><script type="text/json">{}</script><td class="select"></td><td class="icons"></td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				
+			</td><td class="type-Number ">
+				5,374
+			</td><td class="type-Date ">
+				07/01/2019
+			</td><td class="type-SingleAssociation ">
+				Fee
+			</td><td class="type-Money ">
+				0.10 USD
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				PA120
+			</td><td class="type-String ">
+				Analysis/Strategy
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				
+			</td><td class="type-Integer ">
+				0
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				Fee
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				0.10 USD
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				0.10 USD
+			</td><td class="type-Money ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-Decimal ">
+				1.00
+			</td></tr><tr data-id="5375"><script type="text/json">{}</script><td class="select"></td><td class="icons"></td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				e2
+			</td><td class="type-Number ">
+				5,375
+			</td><td class="type-Date ">
+				07/01/2019
+			</td><td class="type-SingleAssociation ">
+				Expense
+			</td><td class="type-Money ">
+				0.15 USD
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				E102
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				Outside Printing
+			</td><td class="type-String ">
+				
+			</td><td class="type-Integer ">
+				0
+			</td><td class="type-String ">
+				
+			</td><td class="type-String ">
+				Expense
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				0.15 USD
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-String ">
+				
+			</td><td class="type-Money ">
+				0.15 USD
+			</td><td class="type-Money ">
+				
+			</td><td class="type-Money ">
+				
+			</td><td class="type-Decimal ">
+				1.00
+			</td></tr></tbody></table>

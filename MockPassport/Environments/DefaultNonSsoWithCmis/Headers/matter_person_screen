@@ -1,0 +1,10 @@
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-UA-Compatible: IE=10
+X-FRAME-OPTIONS: SAMEORIGIN
+Pragma: no-cache
+metadata: {"parentFieldName":"people","cssClasses":"mode-edit screen list","screen-name":"Matter Person List Screen - Office","searchInput.pageInfo.currentPageNumber":"1","searchInput.pageInfo.totalRecords":"1","parentEntityId":"193","parentInstanceId":"17","searchInput.pageInfo.totalPages":"1","isCalendarView":"false","column-data":"id:10315|id:10316|id:10317|id:10318|id:10319|id:10320|id:10321|id:10322|id:10323|id:10324|id:10325|id:10326|id:10327|id:10328","searchInput.pageInfo.currentPageSize":"25","id":"1885","documentTitle":"Matter Person List Screen - Office","entity":"210"}
+Vary: Accept-Encoding
+Cache-Control: no-cache
+Date: Fri, 09 Aug 2019 13:24:12 GMT
+Server: None

@@ -1,0 +1,8 @@
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-UA-Compatible: IE=10
+X-FRAME-OPTIONS: SAMEORIGIN
+Transfer-Encoding: chunked
+Cache-Control: no-cache
+Date: Fri, 09 Aug 2019 13:24:22 GMT
+Server: None
